@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xml:base="https://rdf.ag/o/hops#"
+  xmlns="https://rdf.ag/o/hops#"
+  xmlns:as="http://www.w3.org/ns/activitystreams#"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:cereals="https://rdf.ag/o/cerealsToo#"
+  xmlns:dbpedia="http://dbpedia.org/resource/"
+  xmlns:bibo="http://purl.org/ontology/bibo/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:doap="http://usefulinc.com/ns/doap#"
+  xmlns:eurovoc="http://eurovoc.europa.eu/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:sosa="http://www.w3.org/ns/sosa/"
+  xmlns:hops="https://rdf.ag/o/hops#"
+  xmlns:geonames="http://sws.geonames.org/"
+  xmlns:loc="http://id.loc.gov/vocabulary/relators/"
+  xmlns:nif="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#"
+  xmlns:oa="http://www.w3.org/ns/oa#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:prov="http://www.w3.org/ns/prov#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:skosxl="http://www.w3.org/2008/05/skos-xl#"
+  xmlns:time="http://www.w3.org/2006/time#"
+  xmlns:vann="http://purl.org/vocab/vann/"
+  xmlns:void="http://rdfs.org/ns/void#"
+  xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <owl:Ontology rdf:about="">
+    <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
+    <vann:preferredNamespacePrefix>hops</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://rdf.ag/o/hops#</vann:preferredNamespaceUri>
+    <dcterms:title xml:lang="en">The Hops Ontology</dcterms:title>
+    <dcterms:title xml:lang="fr">L'Ontologie des Houblons</dcterms:title>
+    <rdfs:label xml:lang="en">The Hops Ontology</rdfs:label>
+    <rdfs:label xml:lang="fr">L'Ontologie des Houblons</rdfs:label>
+    <foaf:name xml:lang="en">The Hops Ontology</foaf:name>
+    <foaf:name xml:lang="fr">L'Ontologie des Houblons</foaf:name>
+    <dcterms:description xml:lang="en">The Hops Ontology is an ontology created to represent data about hops.</dcterms:description>
+    <dcterms:description xml:lang="fr">L'Ontologie des Houblons est une ontologie créée pour représenter des données sur les houblons.</dcterms:description>
+    <skos:definition xml:lang="en">The Hops Ontology is an ontology created to represent data about hops.</skos:definition>
+    <skos:definition xml:lang="fr">L'Ontologie des Houblons est une ontologie créée pour représenter des données sur les houblons.</skos:definition>
+    <rdfs:comment xml:lang="en">The Hops Ontology is an ontology created to represent data about hops.</rdfs:comment>
+    <rdfs:comment xml:lang="fr">L'Ontologie des Houblons est une ontologie créée pour représenter des données sur les houblons.</rdfs:comment>
+    <owl:versionInfo>1.0</owl:versionInfo>
+    <dcterms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-09-30</dcterms:date>
+    <dcterms:rights rdf:resource="https://creativecommons.org/licenses/by/3.0/"/>
+    <vs:term_status xml:lang="en">Stable</vs:term_status>
+    <vs:term_status xml:lang="fr">Stable</vs:term_status>
+    <void:inDataset rdf:resource="#datasetdefinition"/>
+    <dcterms:creator rdf:resource="#singer"/>
+    <dcterms:creator rdf:resource="#warren"/>
+  </owl:Ontology>
+
+  <void:Dataset rdf:about="#datasetdefinition">
+    <dcterms:title xml:lang="en">The Hops Ontology</dcterms:title>
+    <dcterms:title xml:lang="fr">L'Ontologie des Houblons</dcterms:title>
+    <rdfs:label xml:lang="en">The Hops Ontology</rdfs:label>
+    <rdfs:label xml:lang="fr">L'Ontologie des Houblons</rdfs:label>
+    <foaf:name xml:lang="en">The Hops Ontology</foaf:name>
+    <foaf:name xml:lang="fr">L'Ontologie des Houblons</foaf:name>
+    <dcterms:description xml:lang="en">The Hops Ontology is an ontology created to represent data about hops.</dcterms:description>
+    <dcterms:description xml:lang="fr">L'Ontologie des Houblons est une ontologie créée pour représenter des données sur les houblons.</dcterms:description>
+    <skos:definition xml:lang="en">The Hops Ontology is an ontology created to represent data about hops.</skos:definition>
+    <skos:definition xml:lang="fr">L'Ontologie des Houblons est une ontologie créée pour représenter des données sur les houblons.</skos:definition>
+    <rdfs:comment xml:lang="en">The Hops Ontology is an ontology created to represent data about hops.</rdfs:comment>
+    <rdfs:comment xml:lang="fr">L'Ontologie des Houblons est une ontologie créée pour représenter des données sur les houblons.</rdfs:comment>
+    <!-- Need to resolve better rdf for licenses. -->
+    <cc:license rdf:resource="https://creativecommons.org/licenses/by/3.0/"/>
+    <cc:license>Dual license. All rights reserved.</cc:license>
+    <cc:Jurisdiction rdf:resource="http://dbpedia.org/resource/Canada"/>
+    <cc:attributionURL rdf:resource="http://rdf.ag/"/>
+    <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2020-09-30"/>
+    <void:triples>368</void:triples>
+    <void:entities>105</void:entities>
+    <dcterms:subject rdf:resource="http://id.loc.gov/authorities/subjects/sh85146366"/>
+    <dcterms:creator rdf:resource="#singer"/>
+    <dcterms:creator rdf:resource="#warren"/>
+  </void:Dataset>
+  
+  <foaf:Person rdf:about="#singer">
+   <foaf:name>Jessica Singer</foaf:name>
+  </foaf:Person>
+  
+  <foaf:Person rdf:about="#warren">
+   <foaf:name>Rob Warren</foaf:name>
+  </foaf:Person>
+
+ <bibo:Collection rdf:about="#bibliography">
+  <rdfs:label xml:lang="en">The Hops Ontology</rdfs:label>
+  <rdfs:label xml:lang="fr">L'Ontologie des Houblons</rdfs:label>
+  <rdfs:isDefinedBy rdf:resource="http://rdf.ag/o/hops-2020-09-30"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
+ </bibo:Collection>
+
+<hops:Cannabaceae rdf:ID="Humulus">
+    <foaf:name xml:lang="la">Humulus</foaf:name>
+    <skos:definition xml:lang="en">The genus Humulus is a cousin of the genus Cannabis, both of the family Cannabaceae. The genus Humulus comprises of three species: H. lupulus, H. japonicus and H. yunnanensis.</skos:definition>
+    <skos:definition xml:lang="fr">Le genre Humulus est un cousin du genre Cannabis, tous deux de la famille des Cannabacées. Le genre Humulus comprend trois espèces: H. lupulus, H. japonicus et H. yunnanensis.</skos:definition>
+    <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/cerealsToo-20200831"/>
+    <void:inDataset rdf:resource="#datasetdefinition"/>
+ </hops:Cannabaceae>
+     
+ <hops:Humulus rdf:ID="H-lupulus">
+     <foaf:name xml:lang="la">H. lupulus</foaf:name>
+     <skos:definition xml:lang="en">H. lupulus has the most value of this genus as the flowers or hops are a key ingredient in beer. This species is mostly grown in the Northern Hemisphere (between 35˚ and 55˚N) but it is also be cultivated in Austrailia, New Zealand and South Africa.</skos:definition>
+     <skos:definition xml:lang="fr">H. lupulus a le plus de valeur de ce genre car les fleurs ou le houblon sont un ingrédient clé de la bière. Cette espèce est principalement cultivée dans l'hémisphère nord (entre 35˚ et 55˚N) mais elle est également cultivée en Australie, en Nouvelle-Zélande et en Afrique du Sud.</skos:definition>
+        <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/cerealsToo-20200831"/>
+        <void:inDataset rdf:resource="#datasetdefinition"/>
+ </hops:Humulus>
+ 
+ <hops:Humulus rdf:ID="H-japonicus">
+     <foaf:name xml:lang="la">H. japonicus</foaf:name>
+     <skos:definition xml:lang="en">H. japanicus is native to Japan and China, however since this species does not have the lupulin glands it is not viable for brewing.</skos:definition>
+     <skos:definition xml:lang="fr">H. japanicus est originaire du Japon et de Chine, mais comme cette espèce ne possède pas de glandes de lupuline, elle n'est pas viable pour le brassage.</skos:definition>
+        <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/cerealsToo-20200831"/>
+        <void:inDataset rdf:resource="#datasetdefinition"/>
+ </hops:Humulus>
+ 
+ <hops:Humulus rdf:ID="H-yunnanensis">
+     <foaf:name xml:lang="la">H. yunnanensis</foaf:name>
+     <skos:definition xml:lang="en">H. yunnanensis is found in Southern China and not much else is known about this species.</skos:definition>
+     <skos:definition xml:lang="fr">H. yunnanensis se trouve dans le sud de la Chine et on ne sait pas grand-chose d'autre sur cette espèce.</skos:definition>
+        <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/cerealsToo-20200831"/>
+        <void:inDataset rdf:resource="#datasetdefinition"/>
+ </hops:Humulus>
+ 
+ <!-- OWL Datatype Properties -->
+    Farnesene
+    Caryophyllene
+    Myrcene
+    A_Pinene
+    B_Pinene
+    2_Methyl_Butyl
+    Limonene
+    Linalool
+    Citral
+    Geranyl_Acet1
+    Geranyl_Acet2
+    Citronellol
+    Nerol
+    Geraniol
+    B_Ionone
+    CaryOxide
+    Alpha Acid (Make a note that there are chemicals are subclasses but we have as indivial properties because properties are inherited by the subproperties and that is not how chemistry works)
+        Humulene
+        Cohumulene
+        Adhumulone
+        Post Humulone?
+        Prehumulon?
+    Beta Acid
+        Lupulone
+        Colupulone
+        Adilupulone
+-->
+
+ <owl:Class rdf:ID="Hops">
+  <rdfs:label xml:lang="en">Hops</rdfs:label>
+  <rdfs:label xml:lang="fr">Houblon</rdfs:label>
+ </owl:Class>
+ 
+
+ <owl:Class rdf:ID="AlphaAcids">
+  <rdfs:label xml:lang="en">Alpha Acids</rdfs:label>
+  <rdfs:label xml:lang="fr">Acide Alpha</rdfs:label>
+  <skos:definition xml:lang="en">Alpha acids are of great interest to beer brewers as they are agents that adds bittering to the beer when they are isomerized (through the boiling process) to iso-humulons, or iso-alpha acids. Humulone, Cohumulone and adhumulone make up this class of acids. These acids are found in the resin, lupulin, of the hop cone. These chemicals are hexagonal molecules that when non-isomerized are insoluable in aqueous solutions. They are usually expressed in terms of a percentage of the hop's total weight. It remains unclear as to which of the humulones creates the cleanest bitterness in beers, however it is agreed upon that the higher the alpha acid content, the harsher the bitterness in the finished beer.</skos:definition>
+  <prov:wasInformedBy rdf:resource="#Brynildson2020"/> 
+ </owl:Class>    
+
+
+  <sosa:ObservableProperty rdf:about="#alphaAcidsContent">
+   <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+   <rdfs:label xml:lang="en">Alpha Acids Content</rdfs:label>
+   <skos:definition xml:lang="en">Alpha Acids Content</skos:definition>
+  </sosa:ObservableProperty>
+ 
+ <hops:AlphaAcids rdf:about="Humulene">
+  <rdfs:label xml:lang="en">Humulene</rdfs:label>
+ </hops:AlphaAcids>
+
+ <sosa:ObservableProperty rdf:about="#HumuleneContent">
+  <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+  <rdfs:label xml:lang="en">Humulene Content</rdfs:label>
+  <skos:definition xml:lang="en">Humulene Content</skos:definition>
+ </sosa:ObservableProperty> 
+ 
+ <hops:AlphaAcids rdf:about="Cohumulene">
+  <rdfs:label xml:lang="en">Cohumulene</rdfs:label>
+ </hops:AlphaAcids>
+ 
+
+ <sosa:ObservableProperty rdf:about="#CohumuleneContent">
+  <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+  <rdfs:label xml:lang="en">Cohumulene Content</rdfs:label>
+  <skos:definition xml:lang="en">Cohumulene Content</skos:definition>
+ </sosa:ObservableProperty> 
+ 
+ <hops:AlphaAcids rdf:about="Adhumulone">
+  <rdfs:label xml:lang="en">Adhumulone</rdfs:label>
+ </hops:AlphaAcids>
+
+ <sosa:ObservableProperty rdf:about="#AdhumuloneContent">
+  <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+  <rdfs:label xml:lang="en">Adhumulone Content</rdfs:label>
+  <skos:definition xml:lang="en">Adhumulone Content</skos:definition>
+ </sosa:ObservableProperty> 
+
+ <owl:Class rdf:ID="BetaAcids">
+  <rdfs:label xml:lang="en">Beta Acids</rdfs:label>
+  <rdfs:label xml:lang="fr">Acide Beta</rdfs:label>
+ </owl:Class>    
+
+ <hops:BetaAcids rdf:about="Lupulone">
+  <rdfs:label xml:lang="en">Lupulone</rdfs:label>
+ </hops:BetaAcids>
+
+ <sosa:ObservableProperty rdf:about="#LupuloneContent">
+  <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+  <rdfs:label xml:lang="en">Lupulone Content</rdfs:label>
+  <skos:definition xml:lang="en">Lupulone Content</skos:definition>
+ </sosa:ObservableProperty> 
+
+ <hops:BetaAcids rdf:about="Colupulone">
+  <rdfs:label xml:lang="en">Colupulone</rdfs:label>
+ </hops:BetaAcids>
+
+ <sosa:ObservableProperty rdf:about="#ColupuloneContent">
+  <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+  <rdfs:label xml:lang="en">Colupulone Content</rdfs:label>
+  <skos:definition xml:lang="en">Colupulone Content</skos:definition>
+ </sosa:ObservableProperty> 
+
+ <hops:BetaAcids rdf:about="Adilupulone">
+  <rdfs:label xml:lang="en">Adilupulone</rdfs:label>
+ </hops:BetaAcids>
+
+ <sosa:ObservableProperty rdf:about="#AdilupuloneContent">
+  <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+  <rdfs:label xml:lang="en">Adilupulone Content</rdfs:label>
+  <skos:definition xml:lang="en">Adilupulone Content</skos:definition>
+ </sosa:ObservableProperty> 
+
+ <owl:DatatypeProperty rdf:ID="resistanceTo">
+  <rdfs:label xml:lang="en">Resistance To</rdfs:label>
+ </owl:DatatypeProperty>
+ 
+ <owl:DatatypeProperty rdf:ID="susceptibleTo">
+  <rdfs:label xml:lang="en">Susceptible To</rdfs:label>
+ </owl:DatatypeProperty>
+ 
+ <owl:DatatypeProperty rdf:ID="resilienceTo">
+  <rdfs:label xml:lang="en">Resilience To</rdfs:label>
+ </owl:DatatypeProperty>
+ 
+
+    <!--
+ 
+ From H. Lupulus:
+ Varities of common hops, see: http://www.houblonlupuline.com/nos-varietes/
+ This for profiles: http://www.hopslist.com/hops/
+ https://home-brew-stuff.myshopify.com/pages/hop-profiles
+ https://www.morebeer.com/articles/homebrew_beer_hops
+ 
+ Properties:
+    Substitutes
+    Style Guide
+    Characteristics (flavoring)
+    Purpose/Use
+    Storeability
+    HSI: https://www.canr.msu.edu/news/understanding-the-importance-of-the-hop-storage-index, this is for instances
+    
+    
+TBD
+    Cone-Size (?)
+    Cone Density (?)
+    Seasonal Maturity
+    Yield Amount
+    Growth Rate
+    Resistance to
+    Susceptible to
+    Ease of Harvest
+                                 
+    
+=======
+    Storeability
+        HSI: https://www.canr.msu.edu/news/understanding-the-importance-of-the-hop-storage-index, this is for instances
+    Ease of Harvest
+    Total Oil Composition
+        Myrcene Oil Composition
+        Humulene Oil Composition
+        Caryophyllene Oil
+        Farnesene Oil
+    Substitutes
+    Style Guide   
+    Varieties
+    https://www.morebeer.com/articles/homebrew_beer_hops
+    http://scottjanish.com/hop-oils-calulator/
+    -->
+
+ <hops:Hops rdf:about="HopsAhtanum">
+  <rdfs:label xml:lang="en">Ahtanum</rdfs:label>
+  <foaf:name>Ahtanum</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsAmarillo">
+  <rdfs:label xml:lang="en">Amarillo</rdfs:label>
+  <foaf:name>Amarillo</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsApollo">
+  <rdfs:label xml:lang="en">Apollo</rdfs:label>
+  <foaf:name>Apollo</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsAramis">
+  <rdfs:label xml:lang="en">Aramis</rdfs:label>
+  <foaf:name>Aramis</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsBelma">
+  <rdfs:label xml:lang="en">Belma</rdfs:label>
+  <foaf:name>Belma</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsBobek">
+  <rdfs:label xml:lang="en">Bobek</rdfs:label>
+  <foaf:name>Bobek</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsBravo">
+  <rdfs:label xml:lang="en">Bravo</rdfs:label>
+  <foaf:name>Bravo</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsBritishKentGoldings">
+  <rdfs:label xml:lang="en">British Kent Goldings</rdfs:label>
+  <foaf:name>British Kent Goldings</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsCalypso">
+  <rdfs:label xml:lang="en">Calypso</rdfs:label>
+  <foaf:name>Calypso</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsCascade">
+  <rdfs:label xml:lang="en">Cascade</rdfs:label>
+  <foaf:name>Cascade</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsCeleia">
+  <rdfs:label xml:lang="en">Celeia</rdfs:label>
+  <foaf:name>Celeia</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsCentennial">
+  <rdfs:label xml:lang="en">Centennial</rdfs:label>
+  <foaf:name>Centennial</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsChallenger">
+  <rdfs:label xml:lang="en">Challenger</rdfs:label>
+  <foaf:name>Challenger</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsChinook">
+  <rdfs:label xml:lang="en">Chinook</rdfs:label>
+  <foaf:name>Chinook</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsCitra">
+  <rdfs:label xml:lang="en">Citra</rdfs:label>
+  <foaf:name>Citra</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsCluster">
+  <rdfs:label xml:lang="en">Cluster</rdfs:label>
+  <foaf:name>Cluster</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsColumbus">
+  <rdfs:label xml:lang="en">Columbus</rdfs:label>
+  <foaf:name>Columbus</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsComet">
+  <rdfs:label xml:lang="en">Comet</rdfs:label>
+  <foaf:name>Comet</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsCrystal">
+  <rdfs:label xml:lang="en">Crystal</rdfs:label>
+  <foaf:name>Crystal</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsDelta">
+  <rdfs:label xml:lang="en">Delta</rdfs:label>
+  <foaf:name>Delta</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsElDorado">
+  <rdfs:label xml:lang="en">El Dorado</rdfs:label>
+  <foaf:name>El Dorado</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsEquinox">
+  <rdfs:label xml:lang="en">Equinox</rdfs:label>
+  <foaf:name>Equinox</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsFalconersFlight">
+  <rdfs:label xml:lang="en">Falconer's Flight</rdfs:label>
+  <foaf:name>Falconer's Flight</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsFirstGold">
+  <rdfs:label xml:lang="en">First Gold</rdfs:label>
+  <foaf:name>First Gold</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsFuggle">
+  <rdfs:label xml:lang="en">Fuggle</rdfs:label>
+  <foaf:name>Fuggle</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsGalaxy">
+  <rdfs:label xml:lang="en">Galaxy</rdfs:label>
+  <foaf:name>Galaxy</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsGalena">
+  <rdfs:label xml:lang="en">Galena</rdfs:label>
+  <foaf:name>Galena</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsGolding">
+  <rdfs:label xml:lang="en">Golding</rdfs:label>
+  <foaf:name>Golding</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsGreenBullet">
+  <rdfs:label xml:lang="en">Green Bullet</rdfs:label>
+  <foaf:name>Green Bullet</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsHallertau">
+  <rdfs:label xml:lang="en">Hallertau</rdfs:label>
+  <foaf:name>Hallertau</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsHelga">
+  <rdfs:label xml:lang="en">Helga</rdfs:label>
+  <foaf:name>Helga</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsHerkules">
+  <rdfs:label xml:lang="en">Herkules</rdfs:label>
+  <foaf:name>Herkules</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsHersbrucker">
+  <rdfs:label xml:lang="en">Hersbrucker</rdfs:label>
+  <foaf:name>Hersbrucker</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsHorizon">
+  <rdfs:label xml:lang="en">Horizon</rdfs:label>
+  <foaf:name>Horizon</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsHuellMelon">
+  <rdfs:label xml:lang="en">Huell Melon</rdfs:label>
+  <foaf:name>Huell Melon</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsJester">
+  <rdfs:label xml:lang="en">Jester</rdfs:label>
+  <foaf:name>Jester</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsLiberty">
+  <rdfs:label xml:lang="en">Liberty</rdfs:label>
+  <foaf:name>Liberty</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsMagnum">
+  <rdfs:label xml:lang="en">Magnum</rdfs:label>
+  <foaf:name>Magnum</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsMandarinaBavaria">
+  <rdfs:label xml:lang="en">Mandarina Bavaria</rdfs:label>
+  <foaf:name>Mandarina Bavaria</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsMeridian">
+  <rdfs:label xml:lang="en">Meridian</rdfs:label>
+  <foaf:name>Meridian</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsMerkur">
+  <rdfs:label xml:lang="en">Merkur</rdfs:label>
+  <foaf:name>Merkur</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsMillennium">
+  <rdfs:label xml:lang="en">Millennium</rdfs:label>
+  <foaf:name>Millennium</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsMittelfruh">
+  <rdfs:label xml:lang="en">Mittelfruh</rdfs:label>
+  <foaf:name>Mittelfruh</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsMotueka">
+  <rdfs:label xml:lang="en">Motueka</rdfs:label>
+  <foaf:name>Motueka</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsMt.Hood">
+  <rdfs:label xml:lang="en">Mt. Hood</rdfs:label>
+  <foaf:name>Mt. Hood</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsNelsonSauvin">
+  <rdfs:label xml:lang="en">Nelson Sauvin</rdfs:label>
+  <foaf:name>Nelson Sauvin</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsNewport">
+  <rdfs:label xml:lang="en">Newport</rdfs:label>
+  <foaf:name>Newport</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsNorthernBrewer">
+  <rdfs:label xml:lang="en">Northern Brewer</rdfs:label>
+  <foaf:name>Northern Brewer</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsNugget">
+  <rdfs:label xml:lang="en">Nugget</rdfs:label>
+  <foaf:name>Nugget</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsPacificGem">
+  <rdfs:label xml:lang="en">Pacific Gem</rdfs:label>
+  <foaf:name>Pacific Gem</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsPacifica">
+  <rdfs:label xml:lang="en">Pacifica</rdfs:label>
+  <foaf:name>Pacifica</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsPerle">
+  <rdfs:label xml:lang="en">Perle</rdfs:label>
+  <foaf:name>Perle</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsPioneer">
+  <rdfs:label xml:lang="en">Pioneer</rdfs:label>
+  <foaf:name>Pioneer</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsPolaris">
+  <rdfs:label xml:lang="en">Polaris</rdfs:label>
+  <foaf:name>Polaris</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsPrideofRingwood">
+  <rdfs:label xml:lang="en">Pride of Ringwood</rdfs:label>
+  <foaf:name>Pride of Ringwood</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsProgress">
+  <rdfs:label xml:lang="en">Progress</rdfs:label>
+  <foaf:name>Progress</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsSaaz">
+  <rdfs:label xml:lang="en">Saaz</rdfs:label>
+  <foaf:name>Saaz</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsSantiam">
+  <rdfs:label xml:lang="en">Santiam</rdfs:label>
+  <foaf:name>Santiam</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsSaphir">
+  <rdfs:label xml:lang="en">Saphir</rdfs:label>
+  <foaf:name>Saphir</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsSelect">
+  <rdfs:label xml:lang="en">Select</rdfs:label>
+  <foaf:name>Select</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsSimcoe">
+  <rdfs:label xml:lang="en">Simcoe</rdfs:label>
+  <foaf:name>Simcoe</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsSorachiAce">
+  <rdfs:label xml:lang="en">Sorachi Ace</rdfs:label>
+  <foaf:name>Sorachi Ace</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsStyrianGolding">
+  <rdfs:label xml:lang="en">Styrian Golding</rdfs:label>
+  <foaf:name>Styrian Golding</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsSummit">
+  <rdfs:label xml:lang="en">Summit</rdfs:label>
+  <foaf:name>Summit</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsTarget">
+  <rdfs:label xml:lang="en">Target</rdfs:label>
+  <foaf:name>Target</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsTettnanger">
+  <rdfs:label xml:lang="en">Tettnanger</rdfs:label>
+  <foaf:name>Tettnanger</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsTradition">
+  <rdfs:label xml:lang="en">Tradition</rdfs:label>
+  <foaf:name>Tradition</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsUltra">
+  <rdfs:label xml:lang="en">Ultra</rdfs:label>
+  <foaf:name>Ultra</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsVanguard">
+  <rdfs:label xml:lang="en">Vanguard</rdfs:label>
+  <foaf:name>Vanguard</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsWaiiti">
+  <rdfs:label xml:lang="en">Wai-iti</rdfs:label>
+  <foaf:name>Wai-iti</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsWaimea">
+  <rdfs:label xml:lang="en">Waimea</rdfs:label>
+  <foaf:name>Waimea</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsWakatu">
+  <rdfs:label xml:lang="en">Wakatu</rdfs:label>
+  <foaf:name>Wakatu</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsWarrior">
+  <rdfs:label xml:lang="en">Warrior</rdfs:label>
+  <foaf:name>Warrior</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsWhitbreadGoldings">
+  <rdfs:label xml:lang="en">Whitbread Goldings</rdfs:label>
+  <foaf:name>Whitbread Goldings</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="HopsWillamette">
+  <rdfs:label xml:lang="en">Willamette</rdfs:label>
+  <foaf:name>Willamette</foaf:name>
+ </hops:Hops>
+
+    
+  <bibo:Webpage xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Brynildson2020">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">The Oxford Companion to Beer definition of Alpha Acids</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Brynildson2020-cdda3ba35f79d84d48130217c08fff1d">
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Matthew</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Brynildson</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+  </bibo:Webpage>
+</rdf:RDF>
