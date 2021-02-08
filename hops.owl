@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xml:base="https://rdf.ag/o/hops#"
-  xmlns="https://rdf.ag/o/hops#"
+  xmlns:hops="https://rdf.ag/o/hops#"
   xmlns:as="http://www.w3.org/ns/activitystreams#"
   xmlns:cc="http://creativecommons.org/ns#"
-  xmlns:cereals="https://rdf.ag/o/cerealsToo#"
+  xmlns:cerealsToo="https://rdf.ag/o/cerealsToo#"
   xmlns:dbpedia="http://dbpedia.org/resource/"
   xmlns:bibo="http://purl.org/ontology/bibo/"
   xmlns:dcterms="http://purl.org/dc/terms/"
   xmlns:doap="http://usefulinc.com/ns/doap#"
   xmlns:eurovoc="http://eurovoc.europa.eu/"
   xmlns:foaf="http://xmlns.com/foaf/0.1/"
-  xmlns:sosa="http://www.w3.org/ns/sosa/"
-  xmlns:hops="https://rdf.ag/o/hops#"
+  xmlns:cerealtoo="https://rdf.ag/o/cerealtoo#"
   xmlns:geonames="http://sws.geonames.org/"
   xmlns:loc="http://id.loc.gov/vocabulary/relators/"
   xmlns:nif="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#"
@@ -25,6 +24,7 @@
   xmlns:time="http://www.w3.org/2006/time#"
   xmlns:vann="http://purl.org/vocab/vann/"
   xmlns:void="http://rdfs.org/ns/void#"
+  xmlns:sosa="http://www.w3.org/ns/sosa/"
   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 
@@ -44,8 +44,9 @@
     <skos:definition xml:lang="fr">L'Ontologie des Houblons est une ontologie créée pour représenter des données sur les houblons.</skos:definition>
     <rdfs:comment xml:lang="en">The Hops Ontology is an ontology created to represent data about hops.</rdfs:comment>
     <rdfs:comment xml:lang="fr">L'Ontologie des Houblons est une ontologie créée pour représenter des données sur les houblons.</rdfs:comment>
-    <owl:versionInfo>1.0</owl:versionInfo>
-    <dcterms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-09-30</dcterms:date>
+    <owl:versionInfo>1.1</owl:versionInfo>
+    <owl:priorVersion rdf:resource="https://rdf.ag/o/hops-2020-09-30"/>
+    <dcterms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-02-08</dcterms:date>
     <dcterms:rights rdf:resource="https://creativecommons.org/licenses/by/3.0/"/>
     <vs:term_status xml:lang="en">Stable</vs:term_status>
     <vs:term_status xml:lang="fr">Stable</vs:term_status>
@@ -72,9 +73,9 @@
     <cc:license>Dual license. All rights reserved.</cc:license>
     <cc:Jurisdiction rdf:resource="http://dbpedia.org/resource/Canada"/>
     <cc:attributionURL rdf:resource="http://rdf.ag/"/>
-    <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2020-09-30"/>
-    <void:triples>368</void:triples>
-    <void:entities>105</void:entities>
+    <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+    <void:triples>1372</void:triples>
+    <void:entities>249</void:entities>
     <dcterms:subject rdf:resource="http://id.loc.gov/authorities/subjects/sh85146366"/>
     <dcterms:creator rdf:resource="#singer"/>
     <dcterms:creator rdf:resource="#warren"/>
@@ -91,523 +92,1799 @@
  <bibo:Collection rdf:about="#bibliography">
   <rdfs:label xml:lang="en">The Hops Ontology</rdfs:label>
   <rdfs:label xml:lang="fr">L'Ontologie des Houblons</rdfs:label>
-  <rdfs:isDefinedBy rdf:resource="http://rdf.ag/o/hops-2020-09-30"/>
+  <rdfs:isDefinedBy rdf:resource="http://rdf.ag/o/hops-2021-02-08"/>
   <void:inDataset rdf:resource="#datasetdefinition"/>
  </bibo:Collection>
 
-<hops:Cannabaceae rdf:ID="Humulus">
+<!-- OWL Subclass Definition - Cannabaceae Family -->
+ <owl:Class rdf:ID="Cannabaceae">
+     <rdf:type rdf:resource="https://rdf.ag/o/cerealsToo#Family"/>
+     <foaf:name xml:lang="la">Cannabaceae</foaf:name>
+     <rdfs:label xml:lang="en">Hemp Family</rdfs:label>
+     <rdfs:label xml:lang="fr">Famille de Chanvre</rdfs:label>
+     <skos:definition xml:lang="en">There are the only two genera of this family are Humulus and Canabus. Mainly grown in the temperate climates of the Northern Hemisphere, the members of this family can be characterize by having palmately lobed or compound leaves that are borne in spirals or oppositely. Individuals are doiecious (one is either male or female) and petalless, bearing a single seeded fruit that is dry, either achenes or samaras.</skos:definition>
+     <skos:definition xml:lang="fr">Principalement cultivés dans les climats tempérés de l'hémisphère nord, les membres de cette famille peuvent être caractérisés par des feuilles palmées lobées ou composées qui sont portées en spirales ou à l'opposé. Les individus sont doiecious (l'un est mâle ou femelle) et sans pétales, portant un fruit à une seule graine qui est sec, soit des akènes ou des samaras.</skos:definition>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
+ </owl:Class>
+
+ <!-- OWL Subclass Definition - Humulus Genus -->
+<owl:Class rdf:ID="Humulus">
+    <rdfs:subClassOf rdf:resource="#Cannabaceae"/>
     <foaf:name xml:lang="la">Humulus</foaf:name>
     <skos:definition xml:lang="en">The genus Humulus is a cousin of the genus Cannabis, both of the family Cannabaceae. The genus Humulus comprises of three species: H. lupulus, H. japonicus and H. yunnanensis.</skos:definition>
     <skos:definition xml:lang="fr">Le genre Humulus est un cousin du genre Cannabis, tous deux de la famille des Cannabacées. Le genre Humulus comprend trois espèces: H. lupulus, H. japonicus et H. yunnanensis.</skos:definition>
-    <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/cerealsToo-20200831"/>
+    <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
     <void:inDataset rdf:resource="#datasetdefinition"/>
- </hops:Cannabaceae>
+ </owl:Class>
      
- <hops:Humulus rdf:ID="H-lupulus">
+ <owl:Class rdf:ID="Hops">
+     <rdfs:subClassOf rdf:resource="#Humulus"/>
+     <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3486"/>
      <foaf:name xml:lang="la">H. lupulus</foaf:name>
-     <skos:definition xml:lang="en">H. lupulus has the most value of this genus as the flowers or hops are a key ingredient in beer. This species is mostly grown in the Northern Hemisphere (between 35˚ and 55˚N) but it is also be cultivated in Austrailia, New Zealand and South Africa.</skos:definition>
+     <foaf:name xml:lang="en">Hops</foaf:name>
+     <rdfs:label xml:lang="fr">Houblon</rdfs:label>
+     <skos:definition xml:lang="en">H. lupulus has the most value of this genus as the flowers or 'hops' are a key ingredient in beer. This species is mostly grown in the Northern Hemisphere (between 35˚ and 55˚N) but it is also cultivated in Australia, New Zealand and South Africa.</skos:definition>
      <skos:definition xml:lang="fr">H. lupulus a le plus de valeur de ce genre car les fleurs ou le houblon sont un ingrédient clé de la bière. Cette espèce est principalement cultivée dans l'hémisphère nord (entre 35˚ et 55˚N) mais elle est également cultivée en Australie, en Nouvelle-Zélande et en Afrique du Sud.</skos:definition>
-        <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/cerealsToo-20200831"/>
+        <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
         <void:inDataset rdf:resource="#datasetdefinition"/>
- </hops:Humulus>
+ </owl:Class>
  
- <hops:Humulus rdf:ID="H-japonicus">
+ <owl:Class rdf:ID="H-japonicus">
+     <rdfs:subClassOf rdf:resource="#Humulus"/>
      <foaf:name xml:lang="la">H. japonicus</foaf:name>
      <skos:definition xml:lang="en">H. japanicus is native to Japan and China, however since this species does not have the lupulin glands it is not viable for brewing.</skos:definition>
      <skos:definition xml:lang="fr">H. japanicus est originaire du Japon et de Chine, mais comme cette espèce ne possède pas de glandes de lupuline, elle n'est pas viable pour le brassage.</skos:definition>
-        <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/cerealsToo-20200831"/>
+        <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
         <void:inDataset rdf:resource="#datasetdefinition"/>
- </hops:Humulus>
- 
- <hops:Humulus rdf:ID="H-yunnanensis">
-     <foaf:name xml:lang="la">H. yunnanensis</foaf:name>
-     <skos:definition xml:lang="en">H. yunnanensis is found in Southern China and not much else is known about this species.</skos:definition>
-     <skos:definition xml:lang="fr">H. yunnanensis se trouve dans le sud de la Chine et on ne sait pas grand-chose d'autre sur cette espèce.</skos:definition>
-        <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/cerealsToo-20200831"/>
-        <void:inDataset rdf:resource="#datasetdefinition"/>
- </hops:Humulus>
- 
- <!-- OWL Datatype Properties -->
-    Farnesene
-    Caryophyllene
-    Myrcene
-    A_Pinene
-    B_Pinene
-    2_Methyl_Butyl
-    Limonene
-    Linalool
-    Citral
-    Geranyl_Acet1
-    Geranyl_Acet2
-    Citronellol
-    Nerol
-    Geraniol
-    B_Ionone
-    CaryOxide
-    Alpha Acid (Make a note that there are chemicals are subclasses but we have as indivial properties because properties are inherited by the subproperties and that is not how chemistry works)
-        Humulene
-        Cohumulene
-        Adhumulone
-        Post Humulone?
-        Prehumulon?
-    Beta Acid
-        Lupulone
-        Colupulone
-        Adilupulone
--->
-
- <owl:Class rdf:ID="Hops">
-  <rdfs:label xml:lang="en">Hops</rdfs:label>
-  <rdfs:label xml:lang="fr">Houblon</rdfs:label>
  </owl:Class>
  
+ <owl:Class rdf:ID="H-yunnanensis">
+    <rdfs:subClassOf rdf:resource="#Humulus"/>
+    <foaf:name xml:lang="la">H. yunnanensis</foaf:name>
+    <skos:definition xml:lang="en">H. yunnanensis is found in Southern China and not much else is known about this species.</skos:definition>
+    <skos:definition xml:lang="fr">H. yunnanensis se trouve dans le sud de la Chine et on ne sait pas grand-chose d'autre sur cette espèce.</skos:definition>
+    <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+    <void:inDataset rdf:resource="#datasetdefinition"/>
+ </owl:Class>
 
  <owl:Class rdf:ID="AlphaAcids">
-  <rdfs:label xml:lang="en">Alpha Acids</rdfs:label>
-  <rdfs:label xml:lang="fr">Acide Alpha</rdfs:label>
-  <skos:definition xml:lang="en">Alpha acids are of great interest to beer brewers as they are agents that adds bittering to the beer when they are isomerized (through the boiling process) to iso-humulons, or iso-alpha acids. Humulone, Cohumulone and adhumulone make up this class of acids. These acids are found in the resin, lupulin, of the hop cone. These chemicals are hexagonal molecules that when non-isomerized are insoluable in aqueous solutions. They are usually expressed in terms of a percentage of the hop's total weight. It remains unclear as to which of the humulones creates the cleanest bitterness in beers, however it is agreed upon that the higher the alpha acid content, the harsher the bitterness in the finished beer.</skos:definition>
-  <prov:wasInformedBy rdf:resource="#Brynildson2020"/> 
- </owl:Class>    
+    <foaf:name xml:lang="en">Alpha Acids</foaf:name>
+    <foaf:name xml:lang="fr">Acide Alpha</foaf:name>
+    <skos:definition xml:lang="en">Alpha acids are of great interest to beer brewers as they are agents that add bittering to the beer when they are isomerized (through the boiling process) to iso-humulons, or iso-alpha acids. Humulone, Cohumulone and adhumulone make up this class of acids. These acids are found in the resin, lupulin, of the hop cone. These chemicals are hexagonal molecules that when non-isomerized are insoluble in aqueous solutions. They are usually expressed in terms of a percentage of the hop's total weight. It remains unclear as to which of the humulones creates the cleanest bitterness in beers, however it is agreed upon that the higher the alpha acid content, the harsher the bitterness in the finished beer.</skos:definition>
+    <skos:definition xml:lang="fr">Les acides alpha sont d'un grand intérêt pour les brasseurs de bière car ce sont des agents qui ajoutent de l'amertume à la bière lorsqu'ils sont isomérisés (par le processus d'ébullition) en iso-humulons ou acides iso-alpha. L'humulone, la cohumulone et l'adhumulone constituent cette classe d'acides. Ces acides se trouvent dans la résine, la lupuline, du cône de houblon. Ces produits chimiques sont des molécules hexagonales qui, lorsqu'elles ne sont pas isomérisées, sont insolubles dans les solutions aqueuses. Ils sont généralement exprimés en pourcentage du poids total du houblon. On ne sait toujours pas laquelle des humulones crée l'amertume la plus pure dans les bières, mais il est convenu que plus la teneur en acide alpha est élevée, plus l'amertume de la bière finie est forte.</skos:definition>
+    <prov:hadPrimarySource rdf:resource="#Brynildson2020"/>
+ </owl:Class>
+ 
+ <sosa:ObservableProperty rdf:about="#alphaAcidsContent">
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    <rdfs:label xml:lang="en">Alpha Acids Content</rdfs:label>
+    <rdfs:label xml:lang="fr">Measure Acides Alpha</rdfs:label>
+    <skos:definition xml:lang="en">Alpha Acids Content. The amount of alpha acids in grams, per hundred grams of hops.</skos:definition>
+    <!-- Use this 'unit' https://www.ebi.ac.uk/ols/ontologies/uo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUO_0000165 -->
+    <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+    <void:inDataset rdf:resource="#datasetdefinition"/>
+ </sosa:ObservableProperty>
+ 
+ <hops:AlphaAcids rdf:ID="Humulone">
+     <foaf:name xml:lang="en">Humulene</foaf:name>
+     <foaf:name xml:lang="fr">Humulène</foaf:name>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
+ </hops:AlphaAcids>
 
+<owl:Class rdf:ID="BetaAcids">
+ <foaf:name xml:lang="en">Beta Acids</foaf:name>
+ <foaf:name xml:lang="fr">Acides Beta</foaf:name>
+ <skos:definition xml:lang="en">Beta acids, like alpha acids, are found in hop resin. Although only trace amounts survive the brewing process, the ratio of alpha to beta acids are very important to brewers as that ratio determines the decline of the bitterness of hops in storage. When beta acids oxidize, one of compounds that emerges is cohulupulone, which comes from colupulone, does provide some bittering to beer flavor. Once hulupulones are formed, they are relatively stable and can survive the brewing process. Therefore, as alpha acids degrade when they are oxidized during the storage process, bitterness can be recovered as hulupulones formed from oxidation, which is why the alpha to beta acid ratio is so important.</skos:definition>
+ <skos:definition xml:lang="fr">Les acides bêta, comme les acides alpha, se trouvent dans la résine de houblon. Bien que seules des traces survivent au processus de brassage, le rapport entre les acides alpha et bêta est très important pour les brasseurs, car ce rapport détermine le déclin de l'amertume du houblon en stock. Lorsque les acides bêta s'oxydent, l'un des composés qui émerge est la cohulupulone, qui provient de la colupulone, apporte une certaine amertume à la saveur de la bière. Une fois que les hulupulones sont formées, elles sont relativement stables et peuvent survivre au processus de brassage. Par conséquent, comme les acides alpha se dégradent lorsqu'ils sont oxydés pendant le processus de stockage, l'amertume peut être récupérée sous forme d'hulupulones formées par oxydation, ce qui explique pourquoi le rapport acide alpha à bêta est si important.</skos:definition>
+ <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+ <void:inDataset rdf:resource="#datasetdefinition"/>
+ <prov:hadPrimarySource rdf:resource="#Shellhammer2020"/>
+</owl:Class>
 
-  <sosa:ObservableProperty rdf:about="#alphaAcidsContent">
+<sosa:ObservableProperty rdf:about="#betaAcidsContent">
    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
-   <rdfs:label xml:lang="en">Alpha Acids Content</rdfs:label>
-   <skos:definition xml:lang="en">Alpha Acids Content</skos:definition>
+   <rdfs:label xml:lang="en">Beta Acids Content</rdfs:label>
+   <rdfs:label xml:lang="fr">Measure Acides Beta</rdfs:label>
+   <skos:definition xml:lang="en">Beta Acids Content. The amount of beta acids in grams, per hundred grams of hops.</skos:definition>
+   <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+   <void:inDataset rdf:resource="#datasetdefinition"/>
+</sosa:ObservableProperty>
+ 
+ <owl:Class rdf:ID="HSI">
+  <foaf:name xml:lang="en">Hops Storage Index</foaf:name>
+  <rdfs:label xml:lang="en">HSI</rdfs:label>
+  <foaf:name xml:lang="fr">Index de Stockage du Houblon</foaf:name>
+  <skos:definition xml:lang="en">HSI is the measurement of the degredation of alpha and beta acids during hop storage and handling. This is useful to brewers as a way to asses the freshness of hops. Through the use of spectrophotometric analysis of the hops the amount of oxidation compounds (absorb light near 275nm) is divided by acids (absorbes light at 325nm) the resulting ratio is the HSI. If the HSI is less than 0.30 it indicates good quality, 0.30 - 0.40 is acceptable quality, and an HSI greater than 0.40 indicates questionable quality.
+  
+      Harvest timing, oxygen, temperature and storage duration are all factors that impact HSI. When properly stored and handled, HSI can remain stable even after a year.</skos:definition>
+  <skos:definition xml:lang="fr">L'indice de stockage du houblon est la mesure de la dégradation des acides alpha et bêta pendant le stockage et la manipulation du houblon. Ceci est utile pour les brasseurs pour évaluer la fraîcheur du houblon. Grâce à l'utilisation de l'analyse spectrophotométrique du houblon, la quantité de composés d'oxydation (absorbent la lumière près de 275 nm) est divisée par les acides (absorbe la lumière à 325 nm), le rapport résultant est le HSI. Si le HSI est inférieur à 0,30 indique une bonne qualité, 0,30 - 0,40 est une qualité acceptable, et un HSI supérieur à 0,40 indique une qualité douteuse.
+      
+      Le moment de la récolte, l'oxygène, la température et la durée de stockage sont tous des facteurs qui influent sur le HSI. Lorsqu'il est correctement stocké et manipulé, le HSI peut rester stable même après un an.</skos:definition>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
+  <prov:hadPrimarySource rdf:resource="#Sirrine2018"/>
+ </owl:Class>
+ 
+ <sosa:ObservableProperty rdf:about="#hsiContent">
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    <rdfs:label xml:lang="en">HSI</rdfs:label>
+    <rdfs:label xml:lang="fr">HSI</rdfs:label>
+    <skos:definition xml:lang="en">Hops Storage Index. An indication of hops freshness from a measurement of the degradation of alpha and beta acids.</skos:definition>
+    <skos:definition xml:lang="fr">Index de stockage du houblon. Une indication de la fraîcheur du houblon à partir d'une mesure de la dégradation des acides alpha et bêta.</skos:definition>
+    <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+    <void:inDataset rdf:resource="#datasetdefinition"/>
+ </sosa:ObservableProperty>
+
+ <sosa:ObservableProperty rdf:about="#totalOilContent">
+     <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+     <rdfs:label xml:lang="en">Total Oil</rdfs:label>
+     <rdfs:label xml:lang="fr">Montant Total D'Huile</rdfs:label>
+     <skos:definition xml:lang="en">The total amount of oils in terms of mL/100g.</skos:definition>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
   </sosa:ObservableProperty>
  
- <hops:AlphaAcids rdf:about="Humulene">
+ <hops:AlphaAcids rdf:about="#Humulene">
   <rdfs:label xml:lang="en">Humulene</rdfs:label>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:AlphaAcids>
 
  <sosa:ObservableProperty rdf:about="#HumuleneContent">
   <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
   <rdfs:label xml:lang="en">Humulene Content</rdfs:label>
   <skos:definition xml:lang="en">Humulene Content</skos:definition>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </sosa:ObservableProperty> 
  
- <hops:AlphaAcids rdf:about="Cohumulene">
+ <hops:AlphaAcids rdf:about="#Cohumulene">
   <rdfs:label xml:lang="en">Cohumulene</rdfs:label>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:AlphaAcids>
  
-
  <sosa:ObservableProperty rdf:about="#CohumuleneContent">
   <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
   <rdfs:label xml:lang="en">Cohumulene Content</rdfs:label>
   <skos:definition xml:lang="en">Cohumulene Content</skos:definition>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </sosa:ObservableProperty> 
  
- <hops:AlphaAcids rdf:about="Adhumulone">
+ <hops:AlphaAcids rdf:about="#Adhumulone">
   <rdfs:label xml:lang="en">Adhumulone</rdfs:label>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:AlphaAcids>
 
  <sosa:ObservableProperty rdf:about="#AdhumuloneContent">
   <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
   <rdfs:label xml:lang="en">Adhumulone Content</rdfs:label>
   <skos:definition xml:lang="en">Adhumulone Content</skos:definition>
- </sosa:ObservableProperty> 
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
+ </sosa:ObservableProperty>
 
- <owl:Class rdf:ID="BetaAcids">
-  <rdfs:label xml:lang="en">Beta Acids</rdfs:label>
-  <rdfs:label xml:lang="fr">Acide Beta</rdfs:label>
- </owl:Class>    
-
- <hops:BetaAcids rdf:about="Lupulone">
+ <hops:BetaAcids rdf:about="#Lupulone">
   <rdfs:label xml:lang="en">Lupulone</rdfs:label>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:BetaAcids>
 
  <sosa:ObservableProperty rdf:about="#LupuloneContent">
   <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
   <rdfs:label xml:lang="en">Lupulone Content</rdfs:label>
   <skos:definition xml:lang="en">Lupulone Content</skos:definition>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </sosa:ObservableProperty> 
 
- <hops:BetaAcids rdf:about="Colupulone">
+ <hops:BetaAcids rdf:about="#Colupulone">
   <rdfs:label xml:lang="en">Colupulone</rdfs:label>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:BetaAcids>
 
  <sosa:ObservableProperty rdf:about="#ColupuloneContent">
   <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
   <rdfs:label xml:lang="en">Colupulone Content</rdfs:label>
   <skos:definition xml:lang="en">Colupulone Content</skos:definition>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </sosa:ObservableProperty> 
 
- <hops:BetaAcids rdf:about="Adilupulone">
+ <hops:BetaAcids rdf:about="#Adilupulone">
   <rdfs:label xml:lang="en">Adilupulone</rdfs:label>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:BetaAcids>
 
  <sosa:ObservableProperty rdf:about="#AdilupuloneContent">
   <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
   <rdfs:label xml:lang="en">Adilupulone Content</rdfs:label>
   <skos:definition xml:lang="en">Adilupulone Content</skos:definition>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </sosa:ObservableProperty> 
 
  <owl:DatatypeProperty rdf:ID="resistanceTo">
   <rdfs:label xml:lang="en">Resistance To</rdfs:label>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </owl:DatatypeProperty>
  
  <owl:DatatypeProperty rdf:ID="susceptibleTo">
   <rdfs:label xml:lang="en">Susceptible To</rdfs:label>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </owl:DatatypeProperty>
  
  <owl:DatatypeProperty rdf:ID="resilienceTo">
   <rdfs:label xml:lang="en">Resilience To</rdfs:label>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </owl:DatatypeProperty>
  
+ <owl:DatatypeProperty rdf:ID="usdaAccessionNumber">
+  <rdfs:label xml:lang="en">USDA Accession Number</rdfs:label>
+  <skos:definition xml:lang="en">Code used to describe a variety that has been recognized and accepted by the USDA.</skos:definition>
+  <rdfs:label xml:lang="fr">Numéro d’accession du USDA</rdfs:label>
+  <skos:definition xml:lang="fr">Code utilisé pour décrire une variété qui a été reconnue et acceptée par l'USDA.</skos:definition>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
+ </owl:DatatypeProperty>
 
-    <!--
+ <owl:DatatypeProperty rdf:ID="typicalStyle">
+  <rdfs:label xml:lang="en">Typical Beer Style</rdfs:label>
+  <skos:definition xml:lang="en">A style of beet that this hop is usually used in.</skos:definition>
+  <rdfs:label xml:lang="fr">Style de bière typique</rdfs:label>
+  <skos:definition xml:lang="en">Un style de bière dans lequel ces hops sont généralement utilisé.</skos:definition>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
+ </owl:DatatypeProperty>
  
- From H. Lupulus:
- Varities of common hops, see: http://www.houblonlupuline.com/nos-varietes/
- This for profiles: http://www.hopslist.com/hops/
- https://home-brew-stuff.myshopify.com/pages/hop-profiles
- https://www.morebeer.com/articles/homebrew_beer_hops
- 
- Properties:
-    Substitutes
-    Style Guide
-    Characteristics (flavoring)
-    Purpose/Use
-    Storeability
-    HSI: https://www.canr.msu.edu/news/understanding-the-importance-of-the-hop-storage-index, this is for instances
-    
-    
-TBD
-    Cone-Size (?)
-    Cone Density (?)
-    Seasonal Maturity
-    Yield Amount
-    Growth Rate
-    Resistance to
-    Susceptible to
-    Ease of Harvest
-                                 
-    
-=======
-    Storeability
-        HSI: https://www.canr.msu.edu/news/understanding-the-importance-of-the-hop-storage-index, this is for instances
-    Ease of Harvest
-    Total Oil Composition
-        Myrcene Oil Composition
-        Humulene Oil Composition
-        Caryophyllene Oil
-        Farnesene Oil
-    Substitutes
-    Style Guide   
-    Varieties
-    https://www.morebeer.com/articles/homebrew_beer_hops
-    http://scottjanish.com/hop-oils-calulator/
-    -->
+ <owl:ObjectProperty rdf:ID="substitute">
+  <rdfs:label xml:lang="en">Substitute</rdfs:label>
+  <skos:definition xml:lang="en">A hop (or hops) that is similar in aromatic profile to be substituted for another in a beer brew.</skos:definition>
+  <rdfs:label xml:lang="fr">Remplacement</rdfs:label>
+  <skos:definition xml:lang="fr">Un houblon (ou houblon) dont le profil aromatique est similaire à remplacer par un autre dans une bière brassée.</skos:definition>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
+ </owl:ObjectProperty>
 
- <hops:Hops rdf:about="HopsAhtanum">
+ <owl:DatatypeProperty rdf:ID="perceivedAroma">
+  <rdfs:label xml:lang="en">Perceived Aroma</rdfs:label>
+  <skos:definition xml:lang="en">Odor that is perceived from this hops.</skos:definition>
+  <rdfs:comment xml:lang="en">These are subjective, a credible source was used whenever possible and multiple corroborated sources possible.</rdfs:comment> 
+  <rdfs:label xml:lang="fr">Arôme perçu</rdfs:label>
+  <skos:definition xml:lang="en">Odeur perçue à partir de ce houblon.</skos:definition>
+  <rdfs:comment xml:lang="en">Ceux-ci sont subjectifs, une source crédible a été utilisée chaque fois que possible et plusieurs sources corroborées possibles.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
+ </owl:DatatypeProperty> 
+
+ <owl:DatatypeProperty rdf:ID="storability">
+     <rdfs:label xml:lang="en">Storability</rdfs:label>
+     <rdfs:label xml:lang="en">Facilité de stockage</rdfs:label>
+     <skos:definition xml:lang="en">Hop storability shows the percentage of alpha acids that remain after six months in storage at 20˚C (68˚F).</skos:definition>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
+ </owl:DatatypeProperty>
+ 
+ <sosa:ObservableProperty rdf:about="#moistureContent">
+  <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+  <rdfs:label xml:lang="en">Moisture Content</rdfs:label>
+  <rdfs:label xml:lang="fr">Taux D'humidité</rdfs:label>
+  <skos:definition xml:lang="en">The amount of water contained in a sample.</skos:definition>
+  <skos:definition xml:lang="fr">La teneur en humidité dans l'échantillons.</skos:definition>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
+ </sosa:ObservableProperty>
+ 
+<!-- Owl Instances - Hops -->
+ <hops:Hops rdf:about="#HopsAhtanum">
   <rdfs:label xml:lang="en">Ahtanum</rdfs:label>
   <foaf:name>Ahtanum</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsAmarillo">
+ <hops:Hops rdf:about="#HopsAmarillo">
   <rdfs:label xml:lang="en">Amarillo</rdfs:label>
   <foaf:name>Amarillo</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsApollo">
+ <hops:Hops rdf:about="#HopsApollo">
   <rdfs:label xml:lang="en">Apollo</rdfs:label>
   <foaf:name>Apollo</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsAramis">
+ <hops:Hops rdf:about="#HopsAramis">
   <rdfs:label xml:lang="en">Aramis</rdfs:label>
   <foaf:name>Aramis</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsBelma">
+ <hops:Hops rdf:about="#HopsBelma">
   <rdfs:label xml:lang="en">Belma</rdfs:label>
   <foaf:name>Belma</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsBobek">
+ <hops:Hops rdf:about="#HopsBanner">
+  <rdfs:label xml:lang="en">Banner</rdfs:label>
+  <foaf:name>Banner</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#1996.0011183X003600050070x"/>
+ </hops:Hops>
+ <hops:Hops rdf:about="#HopsBobek">
   <rdfs:label xml:lang="en">Bobek</rdfs:label>
   <foaf:name>Bobek</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsBravo">
+ <hops:Hops rdf:about="#HopsBravo">
   <rdfs:label xml:lang="en">Bravo</rdfs:label>
   <foaf:name>Bravo</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsBritishKentGoldings">
+ <hops:Hops rdf:about="#HopsBritishKentGoldings">
   <rdfs:label xml:lang="en">British Kent Goldings</rdfs:label>
   <foaf:name>British Kent Goldings</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsCalypso">
+ <hops:Hops rdf:about="#HopsCalypso">
   <rdfs:label xml:lang="en">Calypso</rdfs:label>
   <foaf:name>Calypso</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsCascade">
-  <rdfs:label xml:lang="en">Cascade</rdfs:label>
-  <foaf:name>Cascade</foaf:name>
+ 
+ <hops:Hops rdf:about="#HopsCascade">
+     <rdfs:label xml:lang="en">Cascade</rdfs:label>
+     <foaf:name>Cascade</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsCeleia">
+ 
+ <hops:Hops rdf:about="#HopsCascadeUS">
+     <rdfs:subClassOf rdf:resource="#HopsCascade"/>
+     <rdfs:label xml:lang="en">Cascade (US)</rdfs:label>
+     <foaf:name>Cascade (US)</foaf:name>
+     <rdfs:label xml:lang="fr">Cascade (US)</rdfs:label>
+     <hops:usdaAccessionNumber>55187</hops:usdaAccessionNumber>
+     <skos:definition xml:lang="en">Cascade is one of the most widely cultivated US hop variety, named after the Cascades mountain range, with an aroma profile of citrus, grapefruit, floral and spicy notes. Noteable characteristics are long, dark green cones and a low alpha acid content relative to other hops.
+      
+      Cascade was released for cultivation in 1972 by a USDA breeding program in Corvallis, Oregon. It has a predigree of [Fuggle x (Serebrianka-Fuggle Seedling)] x OP.</skos:definition>
+     <skos:definition xml:lang="fr">Cascade est l'une des variétés de houblon les plus largement cultivées aux États-Unis, nommée d'après la chaîne de montagnes des Cascades, avec un profil aromatique d'agrumes, de pamplemousse, de notes florales et épicées. Les caractéristiques notables sont de longs cônes vert foncé et une faible teneur en acide alpha par rapport aux autres houblons.
+         
+         Cascade a été mis en culture en 1972 par un programme de sélection USDA à Corvallis, Oregon. Il a un prédigré de [Fuggle x (Serebrianka-Fuggle Seedling)] x OP.</skos:definition>
+     <hops:storability>48%-52%</hops:storability>
+     <hops:alphaAcidsContent>4.5% – 7.0%</hops:alphaAcidsContent>
+     <hops:betaAcidsContent>4.8% – 7.0%</hops:betaAcidsContent>
+     <hops:totalOilContent>0.7 - 1.4 mL/100g</hops:totalOilContent>
+     <hops:perceivedAroma xml:lang="en">Citrus, Floral, Fruity, Grapefruit, Spicy</hops:perceivedAroma>
+     <hops:perceivedAroma xml:lang="fr">Agrumes, Épicé, Floral, Fruité, Pamplemousse</hops:perceivedAroma>
+     <hops:substitute rdf:resource="#HopsAhtanum"/>
+     <hops:substitute rdf:resource="#HopsAmarillo"/>
+     <hops:substitute rdf:resource="#HopsCentennial"/>
+     <hops:substitute rdf:resource="#HopsColumbus"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#IndiaPaleAle"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#AmericanPaleAle"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#BarleyWine"/>
+     <!-- https://www.hopsteiner.com/variety-data-sheets/Cascade/, https://www.google.com/search?q=cascade+hop&sxsrf=ALeKk03xxwsqSdrXRCmY8PD_xyhGZ5OuVw:1604961768627&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiJjePAxPbsAhVrg3IEHXtZBQkQ_AUoAXoECCIQAw&biw=1026&bih=850#imgrc=qj2-eTlpnGewSM, https://www.usahops.org/cabinet/data/2016_VarietyManual%20%281%29.pdf,  -->
+     <prov:hadPrimarySource rdf:resource="#USDA2007Hops"/>
+     <prov:hadPrimarySource rdf:resource="#Lemmens1998"/>
+     <prov:hadPrimarySource rdf:resource="#Sharp2014"/>
+     <prov:hadPrimarySource rdf:resource="#HopGrowersofAmerica2016"/>
+     <prov:hadPrimarySource rdf:resource="#Healey2016The-Hoplist"/>
+     <prov:hadPrimarySource rdf:resource="#Barth-Haas2018"/>
+     <prov:hadPrimarySource rdf:resource="#IHGC2019"/>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
+ </hops:Hops>
+
+ <hops:Hops rdf:about="#HopsCashmere">
+  <rdfs:label xml:lang="en">Cashmere</rdfs:label>
+  <rdfs:label xml:lang="fr">Cashmere</rdfs:label>
+  <foaf:name>Cashmere</foaf:name>
+  <skos:definition xml:lang="en">Cashmere is a result of the cross between Cascade and Northern Brewer, released by Washington State UNiversity in 2013.
+      
+      It is said to be a good dual-purpose hop for bittering and aroma.</skos:definition>
+  <skos:definition xml:lang="fr">Cashmere est le résultat du croisement entre Cascade et Northern Brewer, publié par l'Université de l'État de Washington en 2013.
+      
+      On dit que c'est un bon houblon à double usage pour l'amertume et l'arôme.</skos:definition>
+  <hops:storability>75%</hops:storability>
+  <hops:alphaAcidsContent>7.7% – 9.1%</hops:alphaAcidsContent>
+  <hops:betaAcidsContent>6.4% – 7.1%</hops:betaAcidsContent>
+  <hops:totalOilContent>1.2 - 1.4 mL/100g</hops:totalOilContent>
+  <hops:perceivedAroma xml:lang="en">Coconut, Fruity, Lemon, Lime Peel, Melon, Pineapple, Spicy</hops:perceivedAroma>
+  <hops:perceivedAroma xml:lang="fr">Ananas, Épicé, Citron, Fruitée, Noix de Coco, Melon, Zeste de Lime</hops:perceivedAroma>
+  <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#AmericanPaleAle"/>
+  <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#Saison"/>
+  <!-- https://www.hopsteiner.com/variety-data-sheets/Cashmere/,  -->
+  <prov:hadPrimarySource rdf:resource="#USAHops2017"/>
+  <prov:hadPrimarySource rdf:resource="#Healey2016The-Hoplist"/>
+  <prov:hadPrimarySource rdf:resource="#Amico2019"/>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
+  </hops:Hops>
+ 
+ <hops:Hops rdf:about="#HopsCeleia">
   <rdfs:label xml:lang="en">Celeia</rdfs:label>
   <foaf:name>Celeia</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsCentennial">
-  <rdfs:label xml:lang="en">Centennial</rdfs:label>
-  <foaf:name>Centennial</foaf:name>
- </hops:Hops>
- <hops:Hops rdf:about="HopsChallenger">
+
+ <hops:Hops rdf:about="#HopsCentennial">
+     <rdfs:label xml:lang="en">Centennial</rdfs:label>
+     <rdfs:label xml:lang="fr">Centennial</rdfs:label>
+     <rdfs:label xml:lang="en">Super Cascade</rdfs:label>
+     <foaf:name>Centennial</foaf:name>
+     <hops:usdaAccessionNumber>21507</hops:usdaAccessionNumber>
+     <skos:definition xml:lang="en">Sometimes referred to as 'Super Cascade', this hop is known as a dual-purpose hop for it's aroma and bittering affect in brews. Its popularity has been increasing among craft brewers.
+         
+         Formerly known as Hop W415-90, that was hybridized in 1974 at the Irrigated Agriculture Research and Extension Center. This hop was renamed 'Centennial' for the 100th anniversary of Washington's statehood in 1989. It was grown experimentally for a few years, which is why the USDA assigned its assession number 1987, when it got the name Centennial in 1989.
+         
+         PEDIGREE: OR6619-04 x 63015M; (Brewer's Gold2 x Fuggle-Fuggle Seedling) x (Brewer's Gold2 x East Kent Golding - Bavarian Seedling)Brew/Gold; 3/32 Fuggle; 1/16 East Kent Golding; 1/32 Bavarian; 1/16 unknown</skos:definition>
+     <skos:definition xml:lang="fr">Parfois appelé «Super Cascade», ce houblon est connu comme un houblon à double usage pour son arôme et son effet amer dans les bières. Sa popularité n'a cessé d'augmenter parmi les brasseurs artisanaux.
+         
+         Anciennement connu sous le nom de Hop W415-90, qui a été hybridé en 1974 au Centre de recherche et de vulgarisation sur l'agriculture irriguée. Ce houblon a été renommé `` Centennial '' pour le 100e anniversaire de l'état de Washington en 1989. Il a été cultivé expérimentalement pendant quelques années, c'est pourquoi l'USDA a attribué son numéro d'assession 1987, quand il a reçu le nom de Centennial en 1989.
+      
+         PEDIGREE: OR6619-04 x 63015M; (Brewer's Gold2 x Semis Fuggle-Fuggle) x (Brewer's Gold2 x East Kent Golding - Semis bavarois) Brew / Gold; 3/32 Fuggle; 1/16 East Kent Golding; 1/32 bavarois; 1/16 inconnu</skos:definition>
+     <hops:storability>60%-65%</hops:storability>
+     <hops:alphaAcidsContent>9.5% – 11.5%</hops:alphaAcidsContent>
+     <hops:betaAcidsContent>3.5% – 4.5%</hops:betaAcidsContent>
+     <hops:totalOilContent>1.5 - 2.5 mL/100g</hops:totalOilContent>
+     <hops:perceivedAroma xml:lang="en">Citrus, Floral</hops:perceivedAroma>
+     <hops:perceivedAroma xml:lang="fr">Agrumes, Floral</hops:perceivedAroma>
+     <hops:substitute rdf:resource="#HopsAmarillo"/>
+     <hops:substitute rdf:resource="#HopsCascade"/>
+     <hops:substitute rdf:resource="#HopsChinook"/>
+     <hops:substitute rdf:resource="#HopsColumbus"/>
+     <hops:substitute rdf:resource="#HopsGalena"/>
+     <hops:substitute rdf:resource="#HopsNugget"/>
+     <hops:substitute rdf:resource="#HopsZeus"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#IndiaPaleAle"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#AmericanPaleAle"/>
+     <!-- https://www.hopsteiner.com/variety-data-sheets/Centennial/, https://bsgcraftbrewing.com/hops-american-hops-centennial -->
+     <prov:hadPrimarySource rdf:resource="#USDA2007Hops"/>
+     <prov:hadPrimarySource rdf:resource="#Healey2016The-Hoplist"/>
+     <prov:hadPrimarySource rdf:resource="#USAHops2017"/>
+     <prov:hadPrimarySource rdf:resource="#Nilsen2020"/>
+     <prov:hadPrimarySource rdf:resource="#IHGC2019"/>
+     <prov:hadPrimarySource rdf:resource="#Lemmens1998"/>
+     <!-- Registration Document -->
+     <foaf:isPrimaryTopicOf rdf:resource="#doi:10.2135/cropsci1986.0011183X002600010049x"/>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
+  </hops:Hops>
+ 
+ <hops:Hops rdf:about="#HopsChallenger">
   <rdfs:label xml:lang="en">Challenger</rdfs:label>
   <foaf:name>Challenger</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsChinook">
-  <rdfs:label xml:lang="en">Chinook</rdfs:label>
-  <foaf:name>Chinook</foaf:name>
+ 
+ <hops:Hops rdf:about="#HopsChinook">
+     <rdfs:label xml:lang="en">Chinook</rdfs:label>
+     <foaf:name>Chinook</foaf:name>
+     <hops:usdaAccessionNumber>21226</hops:usdaAccessionNumber>
+     <skos:definition xml:lang="en">Chinook, formerly W415-90, is a hop that came about from the cross between Petham Golding x Brewer's Gold - Utah 526-4 68052 x 63012M through a USDA breeding program in Washington state in 1985.
+      
+         It has grown in popularity among craft brewers  but is also highly respected among larger breweries for it's high alpha acid content and notes of citrus and pine.</skos:definition>
+     <skos:definition xml:lang="fr">Chinook, anciennement W415-90, est un houblon issu du croisement entre Petham Golding x Brewer's Gold - Utah 526-4 68052 x 63012M grâce à un programme de sélection USDA dans l'État de Washington en 1985.
+      
+         Il a gagné en popularité parmi les brasseurs artisanaux, mais il est également très respecté parmi les grandes brasseries pour sa teneur élevée en acide alpha et ses notes d'agrumes et de pin.</skos:definition>
+     <hops:storability>68%-70%</hops:storability>
+     <hops:alphaAcidsContent>12.0% – 14.0%</hops:alphaAcidsContent>
+     <hops:betaAcidsContent>3.0% – 4.0%</hops:betaAcidsContent>
+     <hops:totalOilContent>0.7 - 1.4 mL/100g</hops:totalOilContent>
+     <hops:perceivedAroma xml:lang="en">Grapefruit, Pine, Spicy</hops:perceivedAroma>
+     <hops:perceivedAroma xml:lang="fr">Épicé, Pamplemousse, Pin</hops:perceivedAroma>
+     <hops:substitute rdf:resource="#HopsColumbus"/>
+     <hops:substitute rdf:resource="#HopsGalena"/>
+     <hops:substitute rdf:resource="#HopsNorthernBrewer"/>
+     <hops:substitute rdf:resource="#HopsNugget"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#IndiaPaleAle"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#AmericanPaleAle"/>
+     <!-- https://www.hopsteiner.com/variety-data-sheets/Chinook/, https://bsgcraftbrewing.com/hops-american-hops-chinook -->
+     <prov:hadPrimarySource rdf:resource="#USDA2007Hops"/>
+     <prov:hadPrimarySource rdf:resource="#Lemmens1998"/>
+     <prov:hadPrimarySource rdf:resource="#USAHops2017"/>
+     <prov:hadPrimarySource rdf:resource="#Healey2016The-Hoplist"/>
+     <prov:hadPrimarySource rdf:resource="#IHGC2019"/>
+     <foaf:isPrimaryTopicOf rdf:resource="#cropsci1986.0011183X002600010049x"/>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsCitra">
+ 
+ <hops:Hops rdf:about="#HopsCitra">
   <rdfs:label xml:lang="en">Citra</rdfs:label>
   <foaf:name>Citra</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsCluster">
+ <hops:Hops rdf:about="#HopsCluster">
   <rdfs:label xml:lang="en">Cluster</rdfs:label>
   <foaf:name>Cluster</foaf:name>
+ </hops:Hops> 
+ <hops:Hops rdf:about="#HopsColumbia">
+  <rdfs:label xml:lang="en">Columbia</rdfs:label>
+  <foaf:name>Columbia</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#cropsci1976.0011183X00160005004"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsColumbus">
+ <hops:Hops rdf:about="#HopsColumbus">
   <rdfs:label xml:lang="en">Columbus</rdfs:label>
   <foaf:name>Columbus</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsComet">
+ <hops:Hops rdf:about="#HopsComet">
   <rdfs:label xml:lang="en">Comet</rdfs:label>
   <foaf:name>Comet</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#10.2135cropsci1975.0011183X0015000100"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsCrystal">
+ <hops:Hops rdf:about="#HopsCrystal">
   <rdfs:label xml:lang="en">Crystal</rdfs:label>
   <foaf:name>Crystal</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#cropsci1995.0011183X003500010053x"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsDelta">
+ <hops:Hops rdf:about="#HopsDana">
+  <rdfs:label xml:lang="en">Dana</rdfs:label>
+  <foaf:name>Dana</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#jpr2011.08.0403crc"/>
+ </hops:Hops>
+ <hops:Hops rdf:about="#HopsDelta">
   <rdfs:label xml:lang="en">Delta</rdfs:label>
   <foaf:name>Delta</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsElDorado">
+ 
+ <hops:Hops rdf:about="#HopsElDorado">
   <rdfs:label xml:lang="en">El Dorado</rdfs:label>
   <foaf:name>El Dorado</foaf:name>
+  <skos:definition xml:lang="en">El Dorado is an American hops created by CLS Farms, LLC in 2008 and released to the public in 2010.
+      
+      This hop is good for bittering and for adding aroma due to its high alpha acid and oil content.</skos:definition>
+  <skos:definition xml:lang="en">El Dorado est un houblon américain créé par CLS Farms, LLC en 2008 et rendu public en 2010.
+      
+      Ce houblon est bon pour l'amertume et pour l'ajout d'arôme en raison de sa forte teneur en acide alpha et en huile.</skos:definition>
+  <hops:storability>60%-75%</hops:storability>
+  <hops:alphaAcidsContent>13%-17%</hops:alphaAcidsContent>
+  <hops:betaAcidsContent>7%-8%</hops:betaAcidsContent>
+  <hops:totalOilContent>2.50 - 3.3 mL/100g</hops:totalOilContent>
+  <hops:perceivedAroma xml:lang="en">Tropical Fruit, Pear, Stone Fruit</hops:perceivedAroma>
+  <hops:perceivedAroma xml:lang="fr">Fruits Tropicaux, Poire, Fruits à Noyau</hops:perceivedAroma>
+  <hops:substitute rdf:resource="#HopsGalena"/>
+  <hops:substitute rdf:resource="#HopsSimcoe"/>
+  <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#IndiaPaleAle"/>
+  <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#AmericanPaleAle"/>
+  <!-- https://learn.kegerator.com/el-dorado-hops/ -->
+  <prov:hadPrimarySource rdf:resource="#Healey2016The-Hoplist"/>
+  <prov:hadPrimarySource rdf:resource="#Brewstore2015"/>
+  <prov:hadPrimarySource rdf:resource="#USAHops2017"/>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsEquinox">
+ 
+ <hops:Hops rdf:about="#HopsEquinox">
   <rdfs:label xml:lang="en">Equinox</rdfs:label>
   <foaf:name>Equinox</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsFalconersFlight">
+ <hops:Hops rdf:about="#HopsEroica">
+  <rdfs:label xml:lang="en">Eroica</rdfs:label>
+  <foaf:name>Eroica</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#cropsci1982.0011183X002200060052x"/>
+ </hops:Hops>
+
+ <hops:Hops rdf:about="#HopsFalconersFlight">
   <rdfs:label xml:lang="en">Falconer's Flight</rdfs:label>
   <foaf:name>Falconer's Flight</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsFirstGold">
+ <hops:Hops rdf:about="#HopsFirstGold">
   <rdfs:label xml:lang="en">First Gold</rdfs:label>
   <foaf:name>First Gold</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsFuggle">
+ <hops:Hops rdf:about="#HopsFuggle">
   <rdfs:label xml:lang="en">Fuggle</rdfs:label>
   <foaf:name>Fuggle</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsGalaxy">
+ <hops:Hops rdf:about="#HopsGalaxy">
   <rdfs:label xml:lang="en">Galaxy</rdfs:label>
   <foaf:name>Galaxy</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsGalena">
+ <hops:Hops rdf:about="#HopsGalena">
   <rdfs:label xml:lang="en">Galena</rdfs:label>
   <foaf:name>Galena</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#cropsci1979.0011183X001900040036x"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsGolding">
+ <hops:Hops rdf:about="#HopsGlacier">
+  <rdfs:label xml:lang="en">Glacier</rdfs:label>
+  <foaf:name>Glacier</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="#HopsGolding">
   <rdfs:label xml:lang="en">Golding</rdfs:label>
   <foaf:name>Golding</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsGreenBullet">
+ 
+ <hops:Hops rdf:about="#HopsGoldingUS">
+     <rdfs:label xml:lang="en">Golding (US)</rdfs:label>
+     <rdfs:label xml:lang="fr">Golding (US)</rdfs:label>
+     <foaf:name>Golding (US)</foaf:name>
+     <skos:definition xml:lang="en">Golding comes from the group of cultivars grown in East Kent, United Kingdom. US Golding are typically derived from Canterbury (villiage in East Kent) Golding hops.
+      
+      This hop was originally grown in British Columbia, Canada and it was then appearing in Washington and Oregon states in 1993.
+      
+      Golding is known for its delicate, sweet and floral notes.</skos:definition>
+     <skos:definition xml:lang="fr">Golding provient du groupe de cultivars cultivés dans East Kent, Royaume-Uni. US Golding est généralement dérivé du houblon Golding de Canterbury (village dans l'est du Kent).
+      
+      Ce houblon a été cultivé à l'origine en Colombie-Britannique, au Canada, puis il est apparu dans les États de Washington et de l'Oregon en 1993.
+      
+      Golding est connu pour ses notes délicates, sucrées et florales.</skos:definition>
+     <hops:storability>66%</hops:storability>
+     <hops:alphaAcidsContent>4.0% – 6.0%</hops:alphaAcidsContent>
+     <hops:betaAcidsContent>2.0% – 3.0%</hops:betaAcidsContent>
+     <hops:totalOilContent>0.7 - 1.0 mL/100g</hops:totalOilContent>
+     <hops:perceivedAroma xml:lang="en">Delicate, Floral, Sweet</hops:perceivedAroma>
+     <hops:perceivedAroma xml:lang="fr">Délicat, Doux, Floral</hops:perceivedAroma>
+     <hops:substitute rdf:resource="#HopsFuggle"/>
+     <hops:substitute rdf:resource="#HopsProgress"/>
+     <hops:substitute rdf:resource="#HopsStyrianGolding"/>
+     <hops:substitute rdf:resource="#HopsTettnang"/>
+     <hops:substitute rdf:resource="#HopsUKEastKentGolding"/> <!-- Check this when this variety gets updated -->
+     <hops:substitute rdf:resource="#HopsWillamette"/>
+     <hops:substitute rdf:resource="#HopsWhitbreadGolding"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#BelgianAle"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#EnglishStyleAle"/>
+     <!-- https://www.hopsteiner.com/variety-data-sheets/Golding- -UK/ -->
+     <prov:hadPrimarySource rdf:resource="#Brewstore2015"/>
+     <prov:hadPrimarySource rdf:resource="#Lemmens1998"/>
+     <prov:hadPrimarySource rdf:resource="#Healey2016The-Hoplist"/>
+     <prov:hadPrimarySource rdf:resource="#USAHops2017"/>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
+ </hops:Hops>
+ 
+ <hops:Hops rdf:about="#HopsGreenBullet">
   <rdfs:label xml:lang="en">Green Bullet</rdfs:label>
   <foaf:name>Green Bullet</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsHallertau">
+ <hops:Hops rdf:about="#HopsHallertau">
   <rdfs:label xml:lang="en">Hallertau</rdfs:label>
   <foaf:name>Hallertau</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsHelga">
+ <hops:Hops rdf:about="#HopsHelga">
   <rdfs:label xml:lang="en">Helga</rdfs:label>
   <foaf:name>Helga</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsHerkules">
+ <hops:Hops rdf:about="#HopsHerkules">
   <rdfs:label xml:lang="en">Herkules</rdfs:label>
   <foaf:name>Herkules</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsHersbrucker">
+ <hops:Hops rdf:about="#HopsHersbrucker">
   <rdfs:label xml:lang="en">Hersbrucker</rdfs:label>
   <foaf:name>Hersbrucker</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsHorizon">
+ <hops:Hops rdf:about="#HopsHorizon">
   <rdfs:label xml:lang="en">Horizon</rdfs:label>
   <foaf:name>Horizon</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#cropsci1999.0011183X003900030052x"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsHuellMelon">
+ <hops:Hops rdf:about="#HopsHuellMelon">
   <rdfs:label xml:lang="en">Huell Melon</rdfs:label>
   <foaf:name>Huell Melon</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsJester">
+ <hops:Hops rdf:about="#HopsJester">
   <rdfs:label xml:lang="en">Jester</rdfs:label>
   <foaf:name>Jester</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsLiberty">
+ <hops:Hops rdf:about="#HopsLiberty">
   <rdfs:label xml:lang="en">Liberty</rdfs:label>
   <foaf:name>Liberty</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#ropsci1992.0011183X003200040056x"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsMagnum">
+ <hops:Hops rdf:about="#HopsLusk">
+  <rdfs:label xml:lang="en">Lusk</rdfs:label>
+  <foaf:name>Lusk</foaf:name>
+ </hops:Hops>
+
+ <hops:Hops rdf:about="#HopsMagnum">
   <rdfs:label xml:lang="en">Magnum</rdfs:label>
   <foaf:name>Magnum</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsMandarinaBavaria">
+ 
+ <hops:Hops rdf:about="#HopsMagnumUS">
+     <rdfs:label xml:lang="en">Magnum (US)</rdfs:label>
+     <rdfs:label xml:lang="fr">Magnum (US)</rdfs:label>
+     <foaf:name>Magnum (US)</foaf:name>
+     <foaf:name>Hallertauer Magnum</foaf:name>
+     <hops:usdaAccessionNumber>21670</hops:usdaAccessionNumber>
+     <skos:definition xml:lang="en">Magnum, or Hallertauer Magnum, is a German hops cultivar. While genetically identical, Magnum that is grown in the US will have different characteristics due to the terroir and environmental differences in the US. It was recieved by the USDA in 1992.
+      
+      It is well known as a bittering hop due to its high alpha and cohumulone content.
+      
+      PEDIGREE: Galena (USDA 21182) x German male hop Nr. 75/5/3.</skos:definition>
+     <skos:definition xml:lang="fr">Magnum, ou Hallertauer Magnum, est un cultivar de houblon allemand. Bien que génétiquement identique, le Magnum qui est cultivé aux États-Unis aura des caractéristiques différentes en raison du terroir et des différences environnementales aux États-Unis. Il a été reçu par l'USDA en 1992.
+      
+      Il est bien connu comme un houblon amer en raison de sa teneur élevée en alpha et en cohumulone.
+      
+      PEDIGREE: Galena (USDA 21182) x houblon allemand Nr. 75/5/3.</skos:definition>
+     <hops:perceivedAroma xml:lang="en">No distinct aroma</hops:perceivedAroma>
+     <hops:perceivedAroma xml:lang="fr">Pas d'arôme distinct</hops:perceivedAroma>
+     <hops:storability>80%-85%</hops:storability>
+     <hops:alphaAcidsContent>12.0% – 14.0%</hops:alphaAcidsContent>
+     <hops:betaAcidsContent>4.5% – 6.0%</hops:betaAcidsContent>
+     <hops:totalOilContent>1.9 - 2.3 mL/100g</hops:totalOilContent>
+     <hops:substitute rdf:resource="#HopsColumbus"/>
+     <hops:substitute rdf:resource="#HopsHorizon"/>
+     <hops:substitute rdf:resource="#HopsMagnum_Deu"/>
+     <hops:substitute rdf:resource="#HopsNorthdown"/>
+     <hops:substitute rdf:resource="#HopsNorthernBrewer"/>
+     <hops:substitute rdf:resource="#HopsNugget"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#Ale"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#Lager"/>
+     <!-- https://www.hopsteiner.com/variety-data-sheets/Hallertauer-Magnum/, https://bsgcraftbrewing.com/german-magnum -->
+     <prov:hadPrimarySource rdf:resource="#USDA2007Hops"/>
+     <prov:hadPrimarySource rdf:resource="#Lemmens1998"/>
+     <prov:hadPrimarySource rdf:resource="#USAHops2017"/>
+     <prov:hadPrimarySource rdf:resource="#Healey2016The-Hoplist"/>
+     <prov:hadPrimarySource rdf:resource="#IHGC2019"/>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
+ </hops:Hops>
+ 
+ <hops:Hops rdf:about="#HopsMandarinaBavaria">
   <rdfs:label xml:lang="en">Mandarina Bavaria</rdfs:label>
   <foaf:name>Mandarina Bavaria</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsMeridian">
+ <hops:Hops rdf:about="#HopsMeridian">
   <rdfs:label xml:lang="en">Meridian</rdfs:label>
   <foaf:name>Meridian</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsMerkur">
+ <hops:Hops rdf:about="#HopsMerkur">
   <rdfs:label xml:lang="en">Merkur</rdfs:label>
   <foaf:name>Merkur</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsMillennium">
+ <hops:Hops rdf:about="#HopsMillennium">
   <rdfs:label xml:lang="en">Millennium</rdfs:label>
   <foaf:name>Millennium</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsMittelfruh">
+ <hops:Hops rdf:about="#HopsMittelfruh">
   <rdfs:label xml:lang="en">Mittelfruh</rdfs:label>
   <foaf:name>Mittelfruh</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsMotueka">
+ <hops:Hops rdf:about="#HopsMotueka">
   <rdfs:label xml:lang="en">Motueka</rdfs:label>
   <foaf:name>Motueka</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsMt.Hood">
+ <hops:Hops rdf:about="#HopsMosaic">
+  <rdfs:label xml:lang="en">Mosaic</rdfs:label>
+  <foaf:name>Mosaic</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#10.1094-ASBCJ-2017-1720-01"/>
+ </hops:Hops>
+ <hops:Hops rdf:about="#HopsMt.Hood">
   <rdfs:label xml:lang="en">Mt. Hood</rdfs:label>
   <foaf:name>Mt. Hood</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsNelsonSauvin">
+ <hops:Hops rdf:about="#HopsMountRinier">
+  <rdfs:label xml:lang="en">Mount Rainier</rdfs:label>
+  <foaf:name>Mount Rainier</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="#HopsNelsonSauvin">
   <rdfs:label xml:lang="en">Nelson Sauvin</rdfs:label>
   <foaf:name>Nelson Sauvin</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsNewport">
-  <rdfs:label xml:lang="en">Newport</rdfs:label>
-  <foaf:name>Newport</foaf:name>
+
+ <hops:Hops rdf:about="#HopsNewport">
+     <rdfs:label xml:lang="en">Newport</rdfs:label>
+     <rdfs:label xml:lang="fr">Newport</rdfs:label>
+     <foaf:name>Newport</foaf:name>
+     <hops:usdaAccessionNumber>21736</hops:usdaAccessionNumber>
+     <skos:definition xml:lang="en">Newport is a bittering hop with high alpha and beta acid content, developed by the USDA-ARS and recieving its accession number in 2000.
+      
+      This hop is the result of the cross between Hallertauer 'Magnum' and USDA 58111M as a new multiple disease-resistant bittering hop.</skos:definition>
+     <skos:definition xml:lang="fr">Newport est un houblon amer à haute teneur en acides alpha et bêta, développé par l'USDA-ARS et ayant reçu son numéro d'accession en 2000.
+      
+      Ce houblon est le résultat du croisement entre Hallertauer 'Magnum' et USDA 58111M en tant que nouveau houblon amer résistant aux maladies multiples.</skos:definition>
+     <hops:storability>60%</hops:storability>
+     <hops:alphaAcidsContent>13.5% – 17.0%</hops:alphaAcidsContent>
+     <hops:betaAcidsContent>7.2% – 9.1%</hops:betaAcidsContent>
+     <hops:totalOilContent>1.6 - 3.4 mL/100g</hops:totalOilContent>
+     <hops:perceivedAroma xml:lang="en">Wine, Balsamic</hops:perceivedAroma>
+     <hops:perceivedAroma xml:lang="fr">Balsamique, Vin</hops:perceivedAroma>
+     <hops:substitute rdf:resource="#HopsBrewersGold"/>
+     <hops:substitute rdf:resource="#HopsFuggle"/>
+     <hops:substitute rdf:resource="#HopsGalena"/>
+     <hops:substitute rdf:resource="#HopsMagnum"/>
+     <hops:substitute rdf:resource="#HopsNugget"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beerhttps://rdf.ag/o/beer#Ale"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#Lager"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#BarleyWine"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#Saison"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#Porter"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#BelgianBeer"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#WheatBeer"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#SourBeer"/>
+     <!-- https://learn.kegerator.com/newport-hops/ -->
+     <prov:hadPrimarySource rdf:resource="#USAHops2017"/>
+     <prov:hadPrimarySource rdf:resource="#Healey2016The-Hoplist"/>
+     <prov:hadPrimarySource rdf:resource="#AmericanHomebrewersAssociaton2019"/>
+     <prov:hadPrimarySource rdf:resource="#AmericanHomebrewersAssociaton2019"/>
+     <foaf:isPrimaryTopicOf rdf:resource="#Henning2004"/>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsNorthernBrewer">
+ 
+ <hops:Hops rdf:about="#HopsNorthernBrewer">
   <rdfs:label xml:lang="en">Northern Brewer</rdfs:label>
   <foaf:name>Northern Brewer</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsNugget">
-  <rdfs:label xml:lang="en">Nugget</rdfs:label>
-  <foaf:name>Nugget</foaf:name>
+
+ <hops:Hops rdf:about="#HopsNugget">
+     <rdfs:label xml:lang="en">Nugget</rdfs:label>
+     <rdfs:label xml:lang="fr">Nugget</rdfs:label>
+     <foaf:name>Nugget</foaf:name>
+     <hops:usdaAccessionNumber>21193</hops:usdaAccessionNumber>
+     <skos:definition xml:lang="en">Nugget is a bittering hop known for its high alpha content while having a low beta and cohumolone content. Therefore, this hop is a suitable hop to add bitter base to ales.
+      
+      It was bred in 1970 in Corvallis, Oregon (then called 7005-194); its accession number was assigned in 1978.
+      
+      PEDIGREE: USDA 65009 x 63015M; 5/8 Brewer's Gold, 1/8 Early Green, 1/16 East Kent Golding, 1/32 Bavarian, 5/32 Unknown.</skos:definition>
+     <skos:definition xml:lang="fr">Nugget est un houblon amer connu pour sa haute teneur en alpha tout en ayant une faible teneur en bêta et en cohumolone. Par conséquent, ce houblon est un houblon approprié pour ajouter une base amère aux ales.
+      
+      Il a été élevé en 1970 à Corvallis, Oregon; son numéro d'accession a été attribué en 1978.
+      
+      PEDIGREE: USDA 65009 x 63015M; 5/8 Brewer's Gold, 1/8 Early Green, 1/16 East Kent Golding, 1/32 Bavarian, 5/32 Unknown.</skos:definition>
+     <hops:storability>70%-80%</hops:storability>
+     <hops:alphaAcidsContent>11.5% – 14.0%</hops:alphaAcidsContent>
+     <hops:betaAcidsContent>4.2% – 5.8%</hops:betaAcidsContent>
+     <hops:totalOilContent>1.8 - 2.2 mL/100g</hops:totalOilContent>
+     <hops:perceivedAroma xml:lang="en">Herbal, Peach, Pear, Spicy</hops:perceivedAroma>
+     <hops:perceivedAroma xml:lang="fr">Épicé, Herbes, Pêche, Poire</hops:perceivedAroma>
+     <hops:substitute rdf:resource="#HopsChinook"/>
+     <hops:substitute rdf:resource="#HopsColumbus"/>
+     <hops:substitute rdf:resource="#HopsGalena"/>
+     <hops:substitute rdf:resource="#HopsMagnum"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#IndiaPaleAle"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#BarleyWine"/>
+     <!-- https://bsgcraftbrewing.com/nugget-hop, https://www.hopsteiner.com/variety-data-sheets/Nugget/ -->
+     <prov:hadPrimarySource rdf:resource="#USDA2007Hops"/>
+     <prov:hadPrimarySource rdf:resource="#Lemmens1998"/>
+     <prov:hadPrimarySource rdf:resource="#USAHops2017"/>
+     <prov:hadPrimarySource rdf:resource="#Healey2016The-Hoplist"/>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsPacificGem">
+ 
+ <hops:Hops rdf:about="#HopsOlympic">
+  <rdfs:label xml:lang="en">Olympic</rdfs:label>
+  <foaf:name>Olympic</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#opsci1984.0011183X002400030046x"/>
+ </hops:Hops>
+ <hops:Hops rdf:about="#HopsPacificGem">
   <rdfs:label xml:lang="en">Pacific Gem</rdfs:label>
   <foaf:name>Pacific Gem</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsPacifica">
+ <hops:Hops rdf:about="#HopsPacifica">
   <rdfs:label xml:lang="en">Pacifica</rdfs:label>
   <foaf:name>Pacifica</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsPerle">
+ <hops:Hops rdf:about="#HopsPerle">
   <rdfs:label xml:lang="en">Perle</rdfs:label>
   <foaf:name>Perle</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsPioneer">
+ <hops:Hops rdf:about="#HopsPioneer">
   <rdfs:label xml:lang="en">Pioneer</rdfs:label>
   <foaf:name>Pioneer</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsPolaris">
+ <hops:Hops rdf:about="#HopsPolaris">
   <rdfs:label xml:lang="en">Polaris</rdfs:label>
   <foaf:name>Polaris</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsPrideofRingwood">
+ <hops:Hops rdf:about="#HopsPoncelet">
+  <rdfs:label xml:lang="en">Poncelet</rdfs:label>
+  <foaf:name>Poncelet</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="#Rakau">
+  <rdfs:label xml:lang="en">Rakau</rdfs:label>
+  <foaf:name>Rakau</foaf:name>
+ </hops:Hops>
+ <hops:Hops rdf:about="#HopsPrideofRingwood">
   <rdfs:label xml:lang="en">Pride of Ringwood</rdfs:label>
   <foaf:name>Pride of Ringwood</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsProgress">
+ <hops:Hops rdf:about="#HopsProgress">
   <rdfs:label xml:lang="en">Progress</rdfs:label>
   <foaf:name>Progress</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsSaaz">
+ <hops:Hops rdf:about="#HopsSaaz">
   <rdfs:label xml:lang="en">Saaz</rdfs:label>
   <foaf:name>Saaz</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsSantiam">
+ <hops:Hops rdf:about="#HopsSantiam">
   <rdfs:label xml:lang="en">Santiam</rdfs:label>
   <foaf:name>Santiam</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="cropsci1999.0011183X003900030051x"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsSaphir">
+ <hops:Hops rdf:about="#HopsSaphir">
   <rdfs:label xml:lang="en">Saphir</rdfs:label>
   <foaf:name>Saphir</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsSelect">
+ <hops:Hops rdf:about="#HopsSelect">
   <rdfs:label xml:lang="en">Select</rdfs:label>
   <foaf:name>Select</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsSimcoe">
+ <hops:Hops rdf:about="#HopsSimcoe">
   <rdfs:label xml:lang="en">Simcoe</rdfs:label>
   <foaf:name>Simcoe</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsSorachiAce">
-  <rdfs:label xml:lang="en">Sorachi Ace</rdfs:label>
-  <foaf:name>Sorachi Ace</foaf:name>
+ 
+ <hops:Hops rdf:about="#HopsSorachiAce">
+     <rdfs:label xml:lang="en">Sorachi Ace</rdfs:label>
+     <rdfs:label xml:lang="fr">Sorachi Ace</rdfs:label>
+     <foaf:name>Sorachi Ace</foaf:name>
+     <hops:usdaAccessionNumber>21702</hops:usdaAccessionNumber>
+     <skos:definition xml:lang="en">Sorachi Ace was developed by Dr. Mori sor Sapporo Breweries Co. Ltd in Japan 1984; a cross between Brewer's Gold, Saaz and Beikei No. 2 male.
+      
+      An aromatic hop that is popular among craft brewers.
+      
+      PEDIGREE: (Brewer's Gold x Saazer -OP) x Beikei No. 2 male; Note: The female parent is the Japanese seedling 70K-SH6 (USDA 21233) which was develioped by Dr. Mori sor Sapporo Breweries Co. Ltd.</skos:definition>
+     <skos:definition xml:lang="fr">Sorachi Ace a été développé par le Dr Mori sor Sapporo Breweries Co. Ltd au Japon en 1984; un croisement entre Brewer's Gold, Saaz et Beikei n ° 2 mâle.
+      
+      Un houblon aromatique apprécié des brasseurs artisanaux.
+      
+      PEDIGREE: (Brewer's Gold x Saazer -OP) x Beikei n ° 2 mâle; Remarque: Le parent femelle est le semis japonais 70K-SH6 (USDA 21233) qui a été développé par le Dr Mori sor Sapporo Breweries Co. Ltd.</skos:definition>
+     <hops:alphaAcidsContent>12.0% – 13.0%</hops:alphaAcidsContent>
+     <hops:betaAcidsContent>8.8% – 9.9%</hops:betaAcidsContent>
+     <hops:totalOilContent>2.8 - 3.2 mL/100g</hops:totalOilContent>
+     <hops:perceivedAroma xml:lang="en">Lemmon, Citrus, Orange, Dill</hops:perceivedAroma>
+     <hops:perceivedAroma xml:lang="fr">Agrumes, Aneth, Citron, Orange</hops:perceivedAroma>
+     <hops:substitute rdf:resource="#HopsCitra"/>
+     <hops:substitute rdf:resource="#HopsSomcoe"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#IndiaPaleAle"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#PaleAle"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#Lager"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#Saison"/>
+     <!-- https://www.hopsteiner.com/variety-data-sheets/Sorachi-Ace/ -->
+     <prov:hadPrimarySource rdf:resource="#USDA2007Hops"/>
+     <prov:hadPrimarySource rdf:resource="#Healey2016The-Hoplist"/>
+     <prov:hadPrimarySource rdf:resource="#USAHops2017"/>
+     <prov:hadPrimarySource rdf:resource="#Brewstore2015"/>
+     <foaf:isPrimaryTopicOf rdf:resource="#Sanekata:2018aa"/>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
  </hops:Hops>
- <hops:Hops rdf:about="HopsStyrianGolding">
+ 
+ <hops:Hops rdf:about="#HopsStyrianGolding">
   <rdfs:label xml:lang="en">Styrian Golding</rdfs:label>
   <foaf:name>Styrian Golding</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsSummit">
+ <hops:Hops rdf:about="#HopsSummit">
   <rdfs:label xml:lang="en">Summit</rdfs:label>
   <foaf:name>Summit</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsTarget">
+ <hops:Hops rdf:about="#HopsTarget">
   <rdfs:label xml:lang="en">Target</rdfs:label>
   <foaf:name>Target</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsTettnanger">
+ <hops:Hops rdf:about="#HopsTettnanger">
   <rdfs:label xml:lang="en">Tettnanger</rdfs:label>
   <foaf:name>Tettnanger</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsTradition">
+ <hops:Hops rdf:about="#HopsTeamaker">
+  <rdfs:label xml:lang="en">Teamaker</rdfs:label>
+  <foaf:name>Teamaker</foaf:name>
+  <foaf:isPrimaryTopicOf rdf:resource="#jpr2007.02.0105crc"/>
+ </hops:Hops>
+ <hops:Hops rdf:about="#HopsTradition">
   <rdfs:label xml:lang="en">Tradition</rdfs:label>
   <foaf:name>Tradition</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsUltra">
+
+ <hops:Hops rdf:about="#HopsTriplePearl">
+     <rdfs:label xml:lang="en">TriplePearl</rdfs:label>
+     <rdfs:label xml:lang="fr">TriplePearl</rdfs:label>
+     <foaf:name>Triple Pearl</foaf:name>
+     <skos:definition xml:lang="en">TriplePearl was developped by the USDA-ARS as a seedless, more virus-resistant variety of 'Perle'. The USDA-ARS Research Project #425226 succeeded in creating a triploid (sterile) hop in 2013.</skos:definition>
+     <skos:definition xml:lang="fr">TriplePearl a été développé par l'USDA-ARS comme une variété de «Perle» sans pépins et plus résistante aux virus. Le projet de recherche USDA-ARS n ° 425226 a réussi à créer un houblon triploïde (stérile) en 2013.</skos:definition>
+     <hops:perceivedAroma xml:lang="en">Melon, Orange Rind/Zest, Orange-Citrus, Pepper, Resin, Spicy</hops:perceivedAroma>
+     <hops:perceivedAroma xml:lang="fr">Épicé, Melon, Orange-agrumes, Poivre, Résine, Zeste d'orange</hops:perceivedAroma>
+     <hops:alphaAcidsContent>10.2% – 11.2%</hops:alphaAcidsContent>
+     <hops:betaAcidsContent>3.3% - 4.2%</hops:betaAcidsContent>
+     <hops:totalOilContent>1.1 - 1.8 mL/100g</hops:totalOilContent>
+     <hops:substitute rdf:resource="#HopsPerle"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#Ale"/>
+     <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#Lager"/>
+     <!-- https://www.45parallelhops.com/new-page, -->
+     <prov:hadPrimarySource rdf:resource="#Henning2014"/>
+     <prov:hadPrimarySource rdf:resource="#BarthHaas2020Triple-Pearl"/>
+     <prov:hadPrimarySource rdf:resource="#USAHops2017"/>
+     <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+     <void:inDataset rdf:resource="#datasetdefinition"/>
+ </hops:Hops>
+
+ <hops:Hops rdf:about="#HopsUSDA21055">
+  <rdfs:label xml:lang="en">USDA 21055</rdfs:label>
+  <foaf:name>USDA 21055</foaf:name>
+  <foaf:isPrimaryResourceOf rdf:resource="#cropsci1978.0011183X001800050085x"/>
+ </hops:Hops>
+ 
+ <hops:Hops rdf:about="#HopsUltra">
   <rdfs:label xml:lang="en">Ultra</rdfs:label>
   <foaf:name>Ultra</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsVanguard">
+ <hops:Hops rdf:about="#HopsVanguard">
   <rdfs:label xml:lang="en">Vanguard</rdfs:label>
   <foaf:name>Vanguard</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsWaiiti">
+ <hops:Hops rdf:about="#HopsWaiiti">
   <rdfs:label xml:lang="en">Wai-iti</rdfs:label>
   <foaf:name>Wai-iti</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsWaimea">
+ <hops:Hops rdf:about="#HopsWaimea">
   <rdfs:label xml:lang="en">Waimea</rdfs:label>
   <foaf:name>Waimea</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsWakatu">
+ <hops:Hops rdf:about="#HopsWakatu">
   <rdfs:label xml:lang="en">Wakatu</rdfs:label>
   <foaf:name>Wakatu</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsWarrior">
+ <hops:Hops rdf:about="#HopsWarrior">
   <rdfs:label xml:lang="en">Warrior</rdfs:label>
   <foaf:name>Warrior</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsWhitbreadGoldings">
+ <hops:Hops rdf:about="#HopsWhitbreadGoldings">
   <rdfs:label xml:lang="en">Whitbread Goldings</rdfs:label>
   <foaf:name>Whitbread Goldings</foaf:name>
  </hops:Hops>
- <hops:Hops rdf:about="HopsWillamette">
-  <rdfs:label xml:lang="en">Willamette</rdfs:label>
-  <foaf:name>Willamette</foaf:name>
- </hops:Hops>
 
+ <hops:Hops rdf:about="#HopsWillamette">
+  <rdfs:label xml:lang="en">Willamette</rdfs:label>
+  <rdfs:label xml:lang="fr">Willamette</rdfs:label>
+  <foaf:name>Willamette</foaf:name>
+  <hops:usdaAccessionNumber>21041</hops:usdaAccessionNumber>
+  <skos:definition xml:lang="en">Willamette is one of the most popular hop cultivars grown in the US. It was named after Willamette River that runs though Oregon, where it was developped by the USDA breeding program and released in 1976.
+      
+      It is characterized by having a low alpha acid content.
+  
+      PEDIGREE: Tetraploid Fuggle (USDA 21003) x Fuggle seedling 2-4.</skos:definition>
+  <skos:definition xml:lang="fr">Willamette est l'un des cultivars de houblon les plus populaires cultivés aux États-Unis. Il a été nommé d'après la rivière Willamette qui traverse l'Oregon, où il a été développé par le programme de sélection USDA et publié en 1976.
+      
+      Il se caractérise par une faible teneur en acide alpha.
+  
+      PEDIGREE: Fuggle tétraploïde (USDA 21003) x semis Fuggle 2-4.</skos:definition>
+  <hops:perceivedAroma xml:lang="en">Caramel, Citrus, Curry, Elderberry, Incense</hops:perceivedAroma>
+  <hops:perceivedAroma xml:lang="fr">Agrumes, Caramel, Curry, Encens, Sureau</hops:perceivedAroma>
+  <hops:substitute>Fuggle (US), Glacier, Styrian Golding, Tettnanger (US)</hops:substitute>
+  <hops:storability>60%-65%</hops:storability>
+  <hops:alphaAcidsContent>4.0% – 6.0%</hops:alphaAcidsContent>
+  <hops:betaAcidsContent>3.5% – 4.5%</hops:betaAcidsContent>
+  <hops:totalOilContent>1.0 - 1.5 mL/100g</hops:totalOilContent>
+  <hops:substitute rdf:resource="#HopsFuggle_US"/>
+  <hops:substitute rdf:resource="#HopsGlacier"/>
+  <hops:substitute rdf:resource="#HopsStyrianGolding"/>
+  <hops:substitute rdf:resource="#HopsTettnanger_US"/>
+  <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#AmericanLager"/>
+  <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#BrownAle"/>
+  <hops:typicalStyle rdf:resource="https://rdf.ag/o/beer#PaleAle"/>
+  <!-- https://www.hopsteiner.com/variety-data-sheets/Willamette/ -->
+  <prov:hadPrimarySource rdf:resource="#Brewstore2015"/>
+  <prov:hadPrimarySource rdf:resource="#USDA2007Hops"/>
+  <prov:hadPrimarySource rdf:resource="#HopGrowersofAmerica2016"/>
+  <prov:hadPrimarySource rdf:resource="#Lemmens1998"/>
+  <foaf:isPrimaryTopicOf rdf:resource="#sci1976.0011183X001600050043x"/>
+  <rdfs:isDefinedBy rdf:resource="https://rdf.ag/o/hops-2021-02-08"/>
+  <void:inDataset rdf:resource="#datasetdefinition"/>
+ </hops:Hops>
     
-  <bibo:Webpage xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Brynildson2020">
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Sanekata:2018aa">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Identification and Characterization of Geranic Acid as a Unique Flavor Compound of Hops (Humulus lupulus L.) Variety Sorachi Ace</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Sanekata:2018aa-5d070a7ff7d79cb4f26e3d9452e45b14">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Ayako</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Sanekata</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Sanekata:2018aa-22ea6f2883711b464d9fd25b34fdc80f">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Atsushi</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Tanigawa</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Sanekata:2018aa-dc98e9acce6cedfd2531ca75bb86a2d1">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Kiyoshi</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Takoi</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Sanekata:2018aa-d7a51ac9f9e8adccfb68f4334a53436a">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Yasuyuki</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Nakayama</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Sanekata:2018aa-960adb1ded4188a25b5e1458e7908d65">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Youichi</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Tsuchiya</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">12285--12295</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2011.08.0403crc">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of `Dana'---A Bittering Hop Cultivar with a Pleasant Hoppy Aroma</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2011.08.0403crc-cb3bfe6e8f4157219343b2a72ea4d587">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Andreja</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">{\v C}erenak</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2011.08.0403crc-074b269c59a199f38d5354cc689901d5">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Sebastjan</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Radi{\v s}ek</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2011.08.0403crc-62bdceb412d9723fa777466a46675f60">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Monika O.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Luskar</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2011.08.0403crc-4860c06be545b70a7243bac1c8e5b104">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Iztok J.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Ko{\v s}ir</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">263-267</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1982.0011183X002200060052x">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of Eroica Hop1 (Reg. No. 8)</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1982.0011183X002200060052x-b9de967b9a4752180ad223921c8a5fad">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">R.R.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Romanko</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1982.0011183X002200060052x-d80ae379c4d51e24e99440487f72eed4">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Joy</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Jaeger</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1982.0011183X002200060052x-0567407d96f340479e9e44ba7ed1d87a">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Gail B.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Nickerson</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1982.0011183X002200060052x-db4ef9b55f9124b70b401b533e5cf375">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Charles</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Zimmermann</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1982.0011183X002200060052x-0df064bac96e0b38723682472e0b3085">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Alfred</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Haunold</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1982.0011183X002200060052x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1979.0011183X001900040036x">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of Galena Hop1 (Reg. No. 7)</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1979.0011183X001900040036x-8da250e2011928f44e2f6d5b905c28b6">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">R. R.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Romanko</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1979.0011183X001900040036x-d80ae379c4d51e24e99440487f72eed4">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Joy</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Jaeger</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1979.0011183X001900040036x-0567407d96f340479e9e44ba7ed1d87a">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Gail B.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Nickerson</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1979.0011183X001900040036x-340a4e588903edc5ee7d846d5e0c7b90">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">C. E.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Zimmermann</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1979.0011183X001900040036x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1999.0011183X003900030051x">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of `Santiam' Hop</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1999.0011183X003900030051x-b4a68cca7fd3d72372c85cf0a8b753e5">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">J. A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Henning</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1999.0011183X003900030051x-2f7e4ee39c80f0ddd4d04c57f0f5e153">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Haunold</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1999.0011183X003900030051x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1999.0011183X003900030052x">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of `Horizon' Hop</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1999.0011183X003900030052x-b4a68cca7fd3d72372c85cf0a8b753e5">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">J. A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Henning</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1999.0011183X003900030052x-2f7e4ee39c80f0ddd4d04c57f0f5e153">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Haunold</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1999.0011183X003900030052x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#opsci1984.0011183X002400030046x">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of Olympic Hop</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#opsci1984.0011183X002400030046x-d000e51fabea19a012a1f9f80901cb78">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">S. T.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Kenny</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#opsci1984.0011183X002400030046x-340a4e588903edc5ee7d846d5e0c7b90">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">C. E.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Zimmermann</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1984.0011183X002400030046x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1995.0011183X003500010053x">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of `Crystal' Hop</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1995.0011183X003500010053x-2f7e4ee39c80f0ddd4d04c57f0f5e153">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Haunold</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1995.0011183X003500010053x-8582f8f1486c3ebb2901a6b65f453b19">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">G. B.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Nickerson</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1995.0011183X003500010053x-4abe53de71697e93b6b600460ce81f94">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">U.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Gampert</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1995.0011183X003500010053x-9c08c195356f24f833ee4853beb7475e">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">D. S.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Kling</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1995.0011183X003500010053x-d000e51fabea19a012a1f9f80901cb78">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">S. T.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Kenny</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1995.0011183X003500010053x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#ropsci1992.0011183X003200040056x">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of `Liberty' Hop</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#ropsci1992.0011183X003200040056x-2f7e4ee39c80f0ddd4d04c57f0f5e153">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Haunold</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#ropsci1992.0011183X003200040056x-8582f8f1486c3ebb2901a6b65f453b19">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">G. B.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Nickerson</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#ropsci1992.0011183X003200040056x-4abe53de71697e93b6b600460ce81f94">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">U.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Gampert</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#ropsci1992.0011183X003200040056x-255d4789edcb55397a4080bb78c7be90">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">P. A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Whitney</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1992.0011183X003200040056x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2007.02.0105crc">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of `Teamaker' Hop</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2007.02.0105crc-251e99827e7ce0de4a9f1677eb72c6c5">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">John A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Henning</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2007.02.0105crc-0df064bac96e0b38723682472e0b3085">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Alfred</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Haunold</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2007.02.0105crc-9de5dff5f731221b92641dfa0fc9cd54">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">M. Shaun</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Townsend</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2007.02.0105crc-2f9ae94642852d6522a3ca38a3385fd3">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">David H.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Gent</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#jpr2007.02.0105crc-5fb0b8a4d06558c5108586096548cbaa">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Thomas B.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Parker</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">13-14</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#sci1976.0011183X001600050043x">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of Willamette Hop1 (Reg. No. 6)</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#sci1976.0011183X001600050043x-0df064bac96e0b38723682472e0b3085">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Alfred</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Haunold</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#sci1976.0011183X001600050043x-6de69ceb6228acae999f02ff0fd9b3ae">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">C. E.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Horner</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#sci1976.0011183X001600050043x-4ca4be49d5e3802c6c8a0fec5da691e7">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">S. T.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Likens</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#sci1976.0011183X001600050043x-a72581e0401d5f183c375304658ba39a">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">D. D.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Roberts</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#sci1976.0011183X001600050043x-340a4e588903edc5ee7d846d5e0c7b90">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">C. E.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Zimmermann</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1976.0011183X001600050043x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.1094-ASBCJ-2017-1720-01">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Mosaic (HBC 369): A New Flavor Hop Variety</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.1094-ASBCJ-2017-1720-01-a1f2633447292d45896c4d6268da0c91">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Gene</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Probasco</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.1094-ASBCJ-2017-1720-01-6f5ba163b6e1a49d187c61fd592dd64c">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Jason</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Perrault</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.1094-ASBCJ-2017-1720-01-8aecbea9a8cea3b907b45bb642609723">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Scott</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Varnum</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.1094-ASBCJ-2017-1720-01-0c84e62e92b34aea5217254b2430895c">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">David</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Hysert</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">6-10</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#1996.0011183X003600050070x">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of `Banner' Hop</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#1996.0011183X003600050070x-8da250e2011928f44e2f6d5b905c28b6">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">R. R.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Romanko</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#1996.0011183X003600050070x-8582f8f1486c3ebb2901a6b65f453b19">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">G. B.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Nickerson</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#1996.0011183X003600050070x-5b9b0d4bf52fc6cb915da65841addc4a">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">J.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Jaeger</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#1996.0011183X003600050070x-d000e51fabea19a012a1f9f80901cb78">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">S. T.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Kenny</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#1996.0011183X003600050070x-a00dc77605f1b3666cfe4ddc1c97124a">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">C. B.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Skotland</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1996.0011183X003600050070x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1976.0011183X00160005004">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of Columbia Hop1 (Reg. No. 5)</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1976.0011183X00160005004-0df064bac96e0b38723682472e0b3085">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Alfred</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Haunold</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1976.0011183X00160005004-4ca4be49d5e3802c6c8a0fec5da691e7">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">S. T.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Likens</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1976.0011183X00160005004-6de69ceb6228acae999f02ff0fd9b3ae">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">C. E.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Horner</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1976.0011183X00160005004-340a4e588903edc5ee7d846d5e0c7b90">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">C. E.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Zimmermann</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1976.0011183X00160005004-a72581e0401d5f183c375304658ba39a">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">D. D.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Roberts</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1976.0011183X001600050042x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.2135cropsci1975.0011183X0015000100">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of Comet Hop1 (Reg. No. 3)</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.2135cropsci1975.0011183X0015000100-340a4e588903edc5ee7d846d5e0c7b90">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">C. E.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Zimmermann</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.2135cropsci1975.0011183X0015000100-4ca4be49d5e3802c6c8a0fec5da691e7">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">S. T.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Likens</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.2135cropsci1975.0011183X0015000100-2f7e4ee39c80f0ddd4d04c57f0f5e153">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Haunold</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.2135cropsci1975.0011183X0015000100-6de69ceb6228acae999f02ff0fd9b3ae">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">C. E.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Horner</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#10.2135cropsci1975.0011183X0015000100-a72581e0401d5f183c375304658ba39a">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">D. D.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Roberts</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1975.0011183X001500010035x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1986.0011183X002600010049x">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of `Chinook' Hop</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1986.0011183X002600010049x-d000e51fabea19a012a1f9f80901cb78">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">S. T.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Kenny</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#cropsci1986.0011183X002600010049x-340a4e588903edc5ee7d846d5e0c7b90">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">C. E.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Zimmermann</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">cropsci1986.0011183X002600010049x</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Amico2019">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">The Hops Chronicles: Cashmere (2018)</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Amico2019-4b146d1afc9678d14635322bcadefb71">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Paul</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Amico</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#AmericanHomebrewersAssociaton2019">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Hop Substitutions</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#AmericanHomebrewersAssociaton2019-2a1f2c97750543cf44ad2c4748d366ba">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">American Homebrewers</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Association</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Barth-Haas2018">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Hop Harvest Guide 2018</dcterms:title>
+    <dcterms:editor xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Barth-Haas2018-684ec7be5fe9a5dee6a025d9b51624c0">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Stephan J.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Barth</foaf:lastName>
+      </foaf:Person>
+    </dcterms:editor>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#BarthHaas2020Triple-Pearl">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Triple-Pearl</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#BarthHaas2020Triple-Pearl-1cd2f2412bf4e208783b8505a124e325">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/"></foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">BarthHaas</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Brewstore2015">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Hop Substitutions</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Brewstore2015-22e2955ef94b1ffaf57f9065790bd418">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/"></foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Brewstore</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Brynildson2020">
     <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">The Oxford Companion to Beer definition of Alpha Acids</dcterms:title>
     <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
       <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Brynildson2020-cdda3ba35f79d84d48130217c08fff1d">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
         <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Matthew</foaf:firstName>
         <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Brynildson</foaf:lastName>
       </foaf:Person>
     </dcterms:creator>
-  </bibo:Webpage>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Healey2016The-Hoplist">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">The Hoplist</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Healey2016The-Hoplist-d6db33e8b2263ddadde103d8f8ad48e6">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Julian</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Healey</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Henning2004">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Registration of 'Newport' Hop</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Henning2004-91433adc4dae9f4884fd2937fe4c5bbc">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">S; Mahaffee W; Kenny S; Haunold A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Henning</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <bibo:numPages xmlns:bibo="http://purl.org/ontology/bibo/">1018-1019</bibo:numPages>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Henning2014">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Research Project #425226 - 2014 Annual Report</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Henning2014-d2ad2a3b2e99ae6a81e2bd5030810964">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">D; Hayes R</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Henning</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#IHGC2019">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">IHGC Variety List 2019</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#IHGC2019-a567ac97c66003a64c587039e60a7b6f">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">International Hop Growers</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Convention</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Neve1991Hops">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Hops</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Neve1991Hops-354c3685d5b2c8ec9c0e531c4cdfc67c">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">R. A.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Neve</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#HopGrowersofAmerica2016">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">USA Hops Variety Manual</dcterms:title>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Lemmens1998">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">The Breeding and Parentage of Hop Varieties</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Lemmens1998-a2a094c1752bcb59ec5ea8e93c6738c3">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">G.</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Lemmens</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Nilsen2020">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Big Two Hearted --- The Fascinating Story of Bell's Iconic IPA</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Nilsen2020-248b1b0b6d69ccb937a7cdbc9d242acb">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">David</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Nilsen</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:AcademicArticle xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Sharp2014">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Effect of Harvest Maturity on the Chemical Composition of Cascade and Willamette Hops</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Sharp2014-9cebee0442bc19eb6221184c0115cade">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Yanping Qian Thomas H. Shellhammer</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Daniel C. Sharp</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:AcademicArticle>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Shellhammer2020">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">The Oxford Companion to Beer definition of Hulupones</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Shellhammer2020-fb23f59983f61c5a52dd4532bbec4a90">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Thomas</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Shellhammer</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Sirrine2018">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Understanding the importance of the Hop Storage Index</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#Sirrine2018-1b2a8eab7c4b27fd6dd7563bdb58a3a4">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Rob</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Sirrine</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#USAHops2017">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">2017 Varieties Snapshot</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#USAHops2017-184eb0f11ce153503279fe162b7ab96a">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">USA Hops: Hop Growers</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">America</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
+  <bibo:Book xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#USDA2007Hops">
+    <dcterms:title xmlns:dcterms="http://purl.org/dc/terms/">Hop Cultivar Description: Cascade</dcterms:title>
+    <dcterms:creator xmlns:dcterms="http://purl.org/dc/terms/">
+      <foaf:Person xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:about="#USDA2007Hops-f4e69b42c465f6ad24f3126cce923e7b">
+        <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+        <foaf:firstName xmlns:foaf="http://xmlns.com/foaf/0.1/">Shaun Townsend</foaf:firstName>
+        <foaf:lastName xmlns:foaf="http://xmlns.com/foaf/0.1/">Al Haunold</foaf:lastName>
+      </foaf:Person>
+    </dcterms:creator>
+    <vs:term_status xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Unstable</vs:term_status>
+  </bibo:Book>
 </rdf:RDF>
